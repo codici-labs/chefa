@@ -1,5 +1,9 @@
 
 <!DOCTYPE html>
+<style>
+.form-style {
+  font-size: 1.5em; }
+</style>
 <html>
 <head>
   <!-- Standard Meta -->
@@ -281,6 +285,36 @@
   </div>
  
 
+  <div id="contacto" class="ui container testimonials ">
+    <h3 class="ui header">¡Registrate!</h3>
+    <div class=" center aligned">
+      <form class="ui form">
+  <div class="field form-style">
+    <label style="padding-bottom: 10px;">Nombre</label>
+    <input type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+  </div>
+  <div class="field form-style">
+    <label  style="padding-bottom: 10px;">e-Mail</label>
+    <input type="email" name="email" placeholder="Tu e-mail" required title="Por favor ingrese su email">
+  </div>
+  <div class="field form-style">
+    <label  style="padding-bottom: 10px;">Teléfono</label>
+    <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+  </div>
+
+  <div class="ui form">
+  <div class="field form-style">
+    <label  style="padding-bottom: 10px;">Comentario</label>
+    <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
+  </div>
+  </div><br><br>
+<div class="ui center aligned " align="center"> 
+  <button   class="ui big blue button " type="Submit">¡Enviar!</button>
+</div>
+</form>
+    </div>
+  </div>
+
 
 
 
@@ -312,6 +346,7 @@
       </div>
     </div>
   </div>
+
 </div>
   <script src="js/jquery.js"></script>
   <script src="js/jquery.waypoints.js"></script>
