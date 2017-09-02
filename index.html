@@ -25,10 +25,10 @@
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
-    <a class="active item">Home</a>
-    <a class="item">Ofertas</a>
-    <a class="item">Nosotros</a>
-    <a class="item">Contacto</a>
+    <a href="#home" class="active item smooth-scrolling">Home</a>
+    <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
+    <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
+    <a href="#contacto" class="item smooth-scrolling">Contacto</a>
     <div class="right menu">
      
       <div class="item">
@@ -40,27 +40,27 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-  <a class="active item">Home</a>
-  <a class="item">Ofertas</a>
-  <a class="item">Nosotros</a>
-  <a class="item">Contacto</a>
+  <a href="#home" class="item active smooth-scrolling">Home</a>
+  <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
+  <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
+  <a href="#contacto" class="item smooth-scrolling">Contacto</a>
   <a class="item">Registrate</a>
 </div>
 
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment home">
+  <div id="home" class="ui inverted vertical masthead center aligned segment home">
     <div class="overlay">
     <div class="ui container">
       <div class="ui large secondary inverted pointing menu">
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
-        <a class="active item">Home</a>
-        <a class="item">Ofertas</a>
-        <a class="item">Nosotros</a>
-        <a class="item">Contacto</a>
+        <a href="#home" class="item active smooth-scrolling">Home</a>
+        <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
+        <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
+        <a href="#contacto" class="item smooth-scrolling">Contacto</a>
         <div class="right item">
           <a class="ui inverted button">Registrate</a>
         </div>
@@ -77,68 +77,70 @@
     </div>
   </div>
   <!-- Ofertas principales-->
-  <div class="ui container main-title"><h2>Ofertas del día</h2></div>
-  <div class="ui vertical stripe segment">
-    <div class="ui three stackable cards container">
-      <div class="ui card ofert-card card-1 animated">
-        <div class="image">
-          <img src="images/articulo.jpg">
-        </div>
-        <div class="content">
-          <a class="header">Milanesa con Papa Fritas</a>
-          <div class="ui ribbon green label">$1500</div>
-          <div class="meta">
-            <span class="date">Joined in 2013</span>
+  <div id="ofertas">
+    <div class="ui container main-title"><h2>Ofertas del día</h2></div>
+    <div class="ui vertical stripe segment">
+      <div class="ui three stackable cards container">
+        <div class="ui card ofert-card card-1 animated">
+          <div class="image">
+            <img src="images/articulo.jpg">
           </div>
-          <div class="description">
-           Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+          <div class="content">
+            <a class="header">Milanesa con Papa Fritas</a>
+            <div class="ui ribbon green label">$1500</div>
+            <div class="meta">
+              <span class="date">Joined in 2013</span>
+            </div>
+            <div class="description">
+             Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+            </div>
+          </div>
+          <div class="extra content">
+            <div class="ui basic green button">Comprar</div>
           </div>
         </div>
-        <div class="extra content">
-          <div class="ui basic green button">Comprar</div>
-        </div>
-      </div>
-      <div class="ui card ofert-card animated card-2">
-        <div class="image">
-          <img src="images/articulo.jpg">
-        </div>
+        <div class="ui card ofert-card animated card-2">
+          <div class="image">
+            <img src="images/articulo.jpg">
+          </div>
 
-        <div class="content">
-          <a class="header">Milanesa con Papa Fritas</a>
-           <div class="ui ribbon green label">$1500</div>
-          <div class="meta">
-            <span class="date">Joined in 2013</span>
+          <div class="content">
+            <a class="header">Milanesa con Papa Fritas</a>
+             <div class="ui ribbon green label">$1500</div>
+            <div class="meta">
+              <span class="date">Joined in 2013</span>
+            </div>
+            <div class="description">
+             Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+            </div>
           </div>
-          <div class="description">
-           Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
-          </div>
-        </div>
-        <div class="extra content">
-          <div class="ui basic green button">Comprar</div>
-        </div>
-      </div>
-      <div class="ui card ofert-card animated card-3">
-        <div class="image">
-          <img src="images/articulo.jpg">
-        </div>
-        <div class="content">
-          <a class="header">Milanesa con Papa Fritas</a>
-           <div class="ui ribbon green label">$1500</div>
-          <div class="meta">
-            <span class="date">Joined in 2013</span>
-          </div>
-          <div class="description">
-           Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+          <div class="extra content">
+            <div class="ui basic green button">Comprar</div>
           </div>
         </div>
-        <div class="extra content">
-          <div class="ui basic green button">Comprar</div>
+        <div class="ui card ofert-card animated card-3">
+          <div class="image">
+            <img src="images/articulo.jpg">
+          </div>
+          <div class="content">
+            <a class="header">Milanesa con Papa Fritas</a>
+             <div class="ui ribbon green label">$1500</div>
+            <div class="meta">
+              <span class="date">Joined in 2013</span>
+            </div>
+            <div class="description">
+             Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+            </div>
+          </div>
+          <div class="extra content">
+            <div class="ui basic green button">Comprar</div>
+          </div>
         </div>
-      </div>
-    </div>  
+      </div>  
+    </div>
   </div>      
 
-  <div class="ui vertical stripe quote segment order">
+  <div id="nosotros" class="ui vertical stripe quote segment order">
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column ">
@@ -355,6 +357,42 @@
   <script src="dist/components/transition.js"></script>
   <script>
   $(document).ready(function() {
+
+      $('.smooth-scrolling[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+          // On-page links
+          if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+            && 
+            location.hostname == this.hostname
+          ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+              // Only prevent default if animation is actually gonna happen
+              event.preventDefault();
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000, function() {
+                // Callback after animation
+                // Must change focus!
+                var $target = $(target);
+                $target.focus();
+                if ($target.is(":focus")) { // Checking if the target was focused
+                  return false;
+                } else {
+                  $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                  $target.focus(); // Set focus again
+                };
+              });
+            }
+          }
+        });
 
       $('#buscar-cocinero').click(function(){
         find_closest_marker();
