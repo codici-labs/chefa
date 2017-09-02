@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Chefnity</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+ 
+</head>
+<body>
+
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="active item">Home</a>
+    <a class="item">Ofertas</a>
+    <a class="item">Nosotros</a>
+    <a class="item">Contacto</a>
+    <div class="right menu">
+     
+      <div class="item">
+        <a class="ui button">Registrate</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">Ofertas</a>
+  <a class="item">Nosotros</a>
+  <a class="item">Contacto</a>
+  <a class="item">Registrate</a>
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment home">
+    <div class="overlay">
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="active item">Home</a>
+        <a class="item">Ofertas</a>
+        <a class="item">Nosotros</a>
+        <a class="item">Contacto</a>
+        <div class="right item">
+          <a class="ui inverted button">Registrate</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Hay un chef cerca tuyo
+      </h1>
+      <h2>¿Querés participar?</h2>
+      <div class="ui huge primary button">Registrate <i class="right arrow icon"></i></div>
+    </div>
+    </div>
+  </div>
+  <!-- Ofertas principales-->
+  <div class="ui container main-title"><h2>Ofertas del día</h2></div>
+  <div class="ui vertical stripe segment">
+    <div class="ui three stackable cards container">
+      <div class="ui card ofert-card card-1 animated">
+        <div class="image">
+          <img src="images/articulo.jpg">
+        </div>
+        <div class="content">
+          <a class="header">Milanesa con Papa Fritas</a>
+          <div class="ui ribbon green label">$1500</div>
+          <div class="meta">
+            <span class="date">Joined in 2013</span>
+          </div>
+          <div class="description">
+           Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui basic green button">Comprar</div>
+        </div>
+      </div>
+      <div class="ui card ofert-card animated card-2">
+        <div class="image">
+          <img src="images/articulo.jpg">
+        </div>
+
+        <div class="content">
+          <a class="header">Milanesa con Papa Fritas</a>
+           <div class="ui ribbon green label">$1500</div>
+          <div class="meta">
+            <span class="date">Joined in 2013</span>
+          </div>
+          <div class="description">
+           Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui basic green button">Comprar</div>
+        </div>
+      </div>
+      <div class="ui card ofert-card animated card-3">
+        <div class="image">
+          <img src="images/articulo.jpg">
+        </div>
+        <div class="content">
+          <a class="header">Milanesa con Papa Fritas</a>
+           <div class="ui ribbon green label">$1500</div>
+          <div class="meta">
+            <span class="date">Joined in 2013</span>
+          </div>
+          <div class="description">
+           Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui basic green button">Comprar</div>
+        </div>
+      </div>
+    </div>  
+  </div>      
+
+  <div class="ui vertical stripe quote segment order">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column ">
+          <h3 class="ui header">Buscá tu cocinero mas cercano</h3>
+          <p>Hacé click para buscar el cocinero mas cercano.</p>
+          <a class="ui orange big button" href="javascript:void(0);" id="buscar-cocinero" onclick="initMap()">Buscar</a>
+        </div>
+        
+      </div>
+      <div class="center aligned row">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- / ofertas principales -->
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="sixteen wide column" id="mas-ofertas">
+          <h2 class="ui header">Más ofertas</h2>
+          
+          <!-- Ofertas del dia -->
+          <div class="ui items">
+            <div class="item">
+              <div class="ui small image">
+                <img src="images/articulo.jpg">
+              </div>
+              <div class="content">
+                <div class="header">Milanesa con Papa Fritas</div>
+                <div class="meta">
+                  <span class="price ui blue label">$1200</span>
+                  <span class="stay">Delivery: retiro en domicilio del vendedor</span>
+                </div>
+                <div class="description">
+                  <p>Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</p>
+                </div>
+                <div class="extra">
+                  <div class="ui right floated primary button">
+                   Comprar
+                    <i class="right chevron icon"></i>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui small image">
+                <img src="images/articulo.jpg">
+              </div>
+              <div class="content">
+                <div class="header">Milanesa con Papa Fritas</div>
+                <div class="meta">
+                  <span class="price ui blue label">$1000</span>
+                  <span class="stay">Delivery: retiro en domicilio del vendedor</span>
+                </div>
+                <div class="description">
+                  <p>Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</p>
+                </div>
+                <div class="extra">
+                  <div class="ui right floated primary button">
+                   Comprar
+                    <i class="right chevron icon"></i>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui small image">
+                <img src="images/articulo.jpg">
+              </div>
+              <div class="content">
+                <div class="header">Milanesa con Papa Fritas</div>
+                <div class="meta">
+                  <span class="price ui blue label">$1600</span>
+                  <span class="stay">Delivery: retiro en domicilio del vendedor</span>
+                </div>
+                <div class="description">
+                  <p>Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</p>
+                </div>
+                <div class="extra">
+                  <div class="ui right floated primary button">
+                   Comprar
+                    <i class="right chevron icon"></i>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+         <!-- / ofertas del dia --> 
+
+        </div>
+        
+      </div>
+     
+    </div>
+  </div>
+
+
+  <div class="ui vertical stripe quote segment order">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column ">
+          <h3 class="ui header">¿Listo para ordenar?</h3>
+          <p>Hacé click en el botón para comprar online o llamanos</p>
+          <button class="ui green button">(011) 3193-0989</button>
+          <button class="ui green button">Comprar</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="ui container testimonials">
+    <h3 class="ui header">Recomendaciones</h3>
+    <div class="ui stackable four column grid ">
+      <div class="column">
+        <img class="ui small circular image" src="images/testimonial1.jpg">
+        <i class="quote left icon"></i>
+        <p>“Estoy en Buenos Aires por un intercambio. La milanesa de Guillermo es única.”</p>
+        <p><strong>Jane Faber, Nueva York</strong></p>
+      </div>
+      <div class="column">
+        <img class="ui small circular image" src="images/testimonial2.jpg">
+        <i class="quote left icon"></i>
+        <p>“No queda muy cerca de mi casa, pero cuando salgo del trabajo me acerco a buscarla. Vale la pena”</p>
+        <p><strong>Ignacio Reyna, Recoleta</strong></p>
+      </div>
+      <div class="column">
+        <img class="ui small circular image" src="images/testimonial3.jpg">
+        <i class="quote left icon"></i>
+        <p>“Llego cansada a casa y nunca tengo ganas de cocinar. Esta milanesa es mi favorita” </p>
+        <p><strong>Margarita Taylor,  Palermo </strong></p>
+      </div>
+      <div class="column">
+        <img class="ui small circular image" src="images/testimonial4.jpg">
+        <i class="quote left icon"></i>
+        <p>“Estaba cansada del delivery y desde que probé Chefnity no puedo dejar de comprar esta milanesa”</p>
+        <p><strong>Marcela Marks, Belgrano</strong></p>
+      </div>
+    </div>
+  </div>
+ 
+
+
+
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Nosotros</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contacto</a>
+           
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Servicios</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Servicio 1</a>
+            <a href="#" class="item">Servicio 2</a>
+            <a href="#" class="item">Servicio 3</a>
+            <a href="#" class="item">Servicio 4</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Chefnity 2017</h4>
+          <p>Somos un grupo de emprendedores amantes de la cocina y las relaciones. Nos gusta cocinar, pero mucho más nos gusta compartir nuestras creaciones con el mundo. </p>
+          <p>Podés conocer más acerca de nosotros en nuestro blog o siguiéndonos en nuestras redes sociales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ <script src="js/jquery.js"></script>
+  <script src="js/jquery.waypoints.js"></script>
+  <script src="dist/components/visibility.js"></script>
+  <script src="dist/components/sidebar.js"></script>
+  <script src="dist/components/transition.js"></script>
+  <script>
+  $(document).ready(function() {
+
+      $('#buscar-cocinero').click(function(){
+        find_closest_marker();
+      });
+
+      // fix menu when passed
+      $('.masthead').visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        });   
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar').sidebar('attach events', '.toc.item');
+     
+    });
+    //Animations
+    $('.card-1').waypoint(function() {    
+        $('.card-1').addClass('animated pulse');
+              
+      }, {
+        offset: '85%'
+      });
+      
+      $('.card-2').waypoint(function() {       
+           setTimeout(function(){
+            $('.card-2').addClass('animated pulse')
+           }, 100);
+      }, {
+        offset: '85%'
+      });
+      $('.card-3').waypoint(function() {       
+           setTimeout(function(){
+            $('.card-3').addClass('animated pulse')
+           }, 200);
+      }, {
+        offset: '85%'
+      });
+  </script>
+  <script>
+  
+  function rad(x) {return x*Math.PI/180;}
+function find_closest_marker( event ) {
+   navigator.geolocation.getCurrentPosition(function(pos) {
+ 
+     lat = pos.coords.latitude;
+     lng = pos.coords.longitude;
+      var R = 6371; // radius of earth in km
+    var distances = [];
+    var closest = -1;
+    for( i=0;i<map.markers.length; i++ ) {
+        var mlat = map.markers[i].position.lat();
+        var mlng = map.markers[i].position.lng();
+        var dLat  = rad(mlat - lat);
+        var dLong = rad(mlng - lng);
+        var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        var d = R * c;
+        distances[i] = d;
+        if ( closest == -1 || d < distances[closest] ) {
+            closest = i;
+        }
+    }
+
+    alert(map.markers[closest].title);
+    });
+   
+   
+}
+   // Creamos un mapa con las coordenadas actuales
+  
+      function initMap() {
+
+        var myLatLng = {lat: -34.5965822628378, lng: -58.369031023435515};
+        var myLatLng2 = {lat: -34.59856053079477, lng: -58.40653903430177};
+        var myLatLng3 = {lat: -34.59396805077273, lng: -58.40259082263185};
+
+      
+
+        var marker = new google.maps.Marker({
+          position: myLatLng2,
+          map: map,
+          title: 'Hello World!'
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng3,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuA4fr6b0amjoCHPnO8DkHPkwAqi_xUs&callback=initMap">
+    </script>
+
+</body>
+
+</html>
