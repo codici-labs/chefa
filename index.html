@@ -115,7 +115,7 @@
             </div>
           </div>
           <div class="extra content">
-            <div class="ui basic green button" data-prodcut-title="Milanesa con Papa Fritas" data-product-price="1500">Comprar</div>
+            <div class="ui basic green button" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a">Comprar</div>
           </div>
         </div>
         <div class="ui card ofert-card animated card-3">
@@ -133,7 +133,7 @@
             </div>
           </div>
           <div class="extra content">
-            <div class="ui basic green button" data-prodcut-title="Milanesa con Papa Fritas" data-product-price="1500">Comprar</div>
+            <div class="ui basic green button" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1">Comprar</div>
           </div>
         </div>
       </div>  
@@ -157,7 +157,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);" data-prodcut-title="Milanesa con Papa Fritas" data-product-price="1500">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a">Comprar</a>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);" data-prodcut-title="Milanesa con Papa Fritas" data-product-price="1500">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-b">Comprar</a>
               </div>
             </div>
           </div>
@@ -195,7 +195,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-c">Comprar</a>
               </div>
             </div>
           </div>
@@ -212,7 +212,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-d">Comprar</a>
               </div>
             </div>
           </div>
@@ -436,33 +436,36 @@
 <div class="ui modal">
   <i class="close icon"></i>
   <div class="header">
-    Comprar
+    Confirmar compra
   </div>
-  <div class="image content">
+  <div class="image content"> 
     <div class="ui medium image">
       <img src="" id="compra-img">
     </div>
     <div class="description">
       <div class="ui header" id="compra-titulo"></div>
-      <p id=""></p>
-      <form class="ui form">
-        <div class="field">
-          <label>Cantidad</label>
-          <input name="cantidad" type="number">
-        </div>
-       
-      </form>
+        <form class="ui form" id="form-compra" method="post" action="pago.php">
+          <div class="field">
+            <label>Cantidad</label>
+            <input name="amount" type="number" value="1">
+          </div>
+          <input type="hidden" name="price" id="price-input">
+          <input type="hidden" name="id" id="id-input">
+          <input type="hidden" name="title" id="title-input">
+          <input type="hidden" name="image" id="image-input">
+          <div class="actions">
+            <div class="ui black deny button">
+              Cancelar
+            </div>
+            <a href="javascript:void(0);" class="ui positive right labeled icon button comprar-submit">
+              Comprar
+              <i class="checkmark icon"></i>
+            </a>
+          </div>
+        </form>
     </div>
   </div>
-  <div class="actions">
-    <div class="ui black deny button">
-      Cancelar
-    </div>
-    <div class="ui positive right labeled icon button">
-      Comprar
-      <i class="checkmark icon"></i>
-    </div>
-  </div>
+  
 </div>
   <script src="js/jquery.js"></script>
   <script src="js/jquery.waypoints.js"></script>
@@ -473,9 +476,21 @@
   <script src="dist/components/modal.js"></script>
   <script>
   $(document).ready(function() {
+      $('.comprar-submit').click(function(){
+        $('#form-compra').submit();
+      });
       $('.comprar').click(function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
+        var image = $(this).data('image');
+        var id = $(this).data('id');
+        $('#title-input').val(title);
+        $('#price-input').val(price);
+        $('#image-input').val(image);
+        $('#id-input').val(id);
+
+        $('#compra-titulo').html(title);
+        $('#compra-img').attr('src',image);
         $('.ui.modal').modal('show');
       });
       $('.smooth-scrolling[href*="#"]')
@@ -612,7 +627,7 @@
 
           }); 
           map.markers.push(marker);
-          google.maps.event.addListener(document.getElementById("buscar-cocinero"), 'click', function( event ) {
+          google.maps.event.addDomListener(document.getElementById("buscar-cocinero"), 'click', function( event ) {
             navigator.geolocation.getCurrentPosition(function(pos) {
    
                var lat = pos.coords.latitude;
