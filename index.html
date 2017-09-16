@@ -140,7 +140,9 @@
     </div>
   </div> 
 
-  <div class="ui container ">  
+  <div id="ofertas">
+    <div class="ui container main-title"><h2>Ofertas del día</h2>
+    <div class="ui vertical stripe segment">
     <div class="ui stackable two column grid">
       <div class="column">
         <div class="ui items">
@@ -220,7 +222,9 @@
       </div>
       
     </div> 
-    
+
+    </div>
+    </div>
   </div>  
 
   <div id="nosotros" class="ui vertical stripe quote segment order">
@@ -569,171 +573,78 @@
       });*/
   </script>
   <script>
-  
-  /*function rad(x) {return x*Math.PI/180;}
-  function find_closest_marker( event ) {
-     navigator.geolocation.getCurrentPosition(function(pos) {
-   
-       lat = pos.coords.latitude;
-       lng = pos.coords.longitude;
-        var R = 6371; // radius of earth in km
-      var distances = [];
-      var closest = -1;
-      for( i=0;i<map.markers.length; i++ ) {
-          var mlat = map. [i].position.lat();
-          var mlng = map.markers[i].position.lng();
-          var dLat  = rad(mlat - lat);
-          var dLong = rad(mlng - lng);
-          var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-              Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
-          var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-          var d = R * c;
-          distances[i] = d;
-          if ( closest == -1 || d < distances[closest] ) {
-              closest = i;
-          }
-      }
 
-      alert(map.markers[closest].title);
-      });
-     
-     
-  }
-*/
   function rad(x) {return x*Math.PI/180;}
 
-   // Creamos un mapa con las coordenadas actuales
+  // Creamos un mapa con las coordenadas actuales
   
-      function initMap() {
-        var infowindow = new google.maps.InfoWindow();
-        var locations = [
-          ['Location 1', -34.5965822628378, -58.369031023435515, 1],
-          ['Location 2', -32.59856053079477, -54.40653903430177, 1],
-          ['Location 3', -34.5965822628378, -58.369031023435515, 1]
-        ];
-        var myLatLng = {lat: -34.5965822628378, lng: -58.369031023435515};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: myLatLng
-        });
-        var marker, i;
-        map.markers = []; 
+  function initMap() {
+    var infowindow = new google.maps.InfoWindow();
+    var locations = [
+      ['Location 1', -34.5965822628378, -58.369031023435515, 1],
+      ['Location 2', -32.59856053079477, -54.40653903430177, 1],
+      ['Location 3', -34.5965822628378, -58.369031023435515, 1]
+    ];
+    var myLatLng = {lat: -34.5965822628378, lng: -58.369031023435515};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: myLatLng
+    });
+    var marker, i;
+    map.markers = []; 
 
 
-          for (i = 0; i < locations.length; i++) {  
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-              map: map
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
 
-          }); 
-          map.markers.push(marker);
-          google.maps.event.addDomListener(document.getElementById("buscar-cocinero"), 'click', function( event ) {
-            navigator.geolocation.getCurrentPosition(function(pos) {
-   
-               var lat = pos.coords.latitude;
-               var lng = pos.coords.longitude;
-            
-              
-              var R = 6371;
-              var distances = [];
-              var closest = -1;
-              for( i=0;i<map.markers.length; i++ ) {
-                  var mlat = map.markers[i].position.lat();
-                  var mlng = map.markers[i].position.lng();
-                  map.markers[i].title = locations[i][0];
-                  var dLat  = rad(mlat - lat);
-                  var dLong = rad(mlng - lng);
-                  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                      Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
-                  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-                  var d = R * c;
-                  distances[i] = d;
-                  if ( closest == -1 || d < distances[closest] ) {
-                      closest = i;
-                  }
-                  
-              }
-              infowindow.setContent(map.markers[closest].title);
-              infowindow.open(map, map.markers[closest]);
+    }); 
+    map.markers.push(marker);
+    google.maps.event.addDomListener(document.getElementById("buscar-cocinero"), 'click', function( event ) {
+      navigator.geolocation.getCurrentPosition(function(pos) {
 
-              alert(map.markers[closest].title);
-
-          });    
-
-      });
-
-          google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-              infowindow.setContent(locations[i][0]);
-              infowindow.open(map, marker);
-            }
-          })(marker, i));
-        }   
+         var lat = pos.coords.latitude;
+         var lng = pos.coords.longitude;
+      
         
-        /*var myLatLng = {lat: -34.5965822628378, lng: -58.369031023435515};
-        var myLatLng2 = {lat: -32.59856053079477, lng: -54.40653903430177};
-        var myLatLng3 = {lat: -34.59396805077273, lng: -58.40259082263185};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: myLatLng
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatLng2,
-          map: map,
-          title: 'Hello World!'
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatLng3,
-          map: map,
-          title: 'Hello World!'
-        });
-
-        map.markers = [];
-        google.maps.event.addListener(map, 'click', find_closest_marker);
-
-        function rad(x) {return x*Math.PI/180;}
-        function find_closest_marker( event ) {
-           navigator.geolocation.getCurrentPosition(function(pos) {
-         
-            lat = pos.coords.latitude;
-            lng = pos.coords.longitude;
-            var R = 6371; // radius of earth in km
-            var distances = [];
-            var closest = -1;
-            for( i=0;i<map.markers.length; i++ ) {
-                console.log(map[i]);
-                var mlat = map[i].position.lat();
-                var mlng = map.markers[i].position.lng();
-                var dLat  = rad(mlat - lat);
-                var dLong = rad(mlng - lng);
-                var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-                    Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
-                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-                var d = R * c;
-                distances[i] = d;
-                if ( closest == -1 || d < distances[closest] ) {
-                    closest = i;
-                }
+        var R = 6371;
+        var distances = [];
+        var closest = -1;
+        for( i=0;i<map.markers.length; i++ ) {
+            var mlat = map.markers[i].position.lat();
+            var mlng = map.markers[i].position.lng();
+            map.markers[i].title = locations[i][0];
+            var dLat  = rad(mlat - lat);
+            var dLong = rad(mlng - lng);
+            var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            var d = R * c;
+            distances[i] = d;
+            if ( closest == -1 || d < distances[closest] ) {
+                closest = i;
             }
-
-            alert(map.markers[closest].title);
-            });
-           
-           
+            
         }
-*/
+        infowindow.setContent(map.markers[closest].title);
+        infowindow.open(map, map.markers[closest]);
 
+    });    
 
+});
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(locations[i][0]);
+        infowindow.open(map, marker);
       }
+    })(marker, i));
+  }   
+    
+
+
+  }
         
 
 
