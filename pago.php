@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+/*error_reporting(E_ALL);
+ini_set('display_errors', 1);*/
 require_once ('./lib/mercadopago.php');
 
 if($_POST){
@@ -10,7 +10,6 @@ if($_POST){
 
 	$access_token = $mp->get_access_token();
 
-	#print_r ($access_token);
 	$preference_data = array(
 	    "items" => array(
 		array(
@@ -27,8 +26,7 @@ if($_POST){
 	$preference = $mp->create_preference($preference_data);
 	if($preference){
 		$redirect = $preference['response']['sandbox_init_point'];
-		header('Location : http://codicilabs.com');
-		//echo $redirect;
+		header('Location:'.$redirect);
 		exit;
 	}else{
 		die('Error');
@@ -36,20 +34,6 @@ if($_POST){
 }else{
 	die('Error');
 }
-
-/*$preference_data = array(
-    "items" => array(
-	array(
-	    "id" => "item-ID-1234",
-	    "title" => "Robopill, el robot mala onda",
-	    "quantity" => 1,
-	    "currency_id" => "ARS", //Available currencies at: https://api.mercadopago.com/currencies
-	    "picture_url" => "http://www.codicilabs.com/mercadopago-sdk-php/robopill.jpg",
-	    "unit_price" => 10.00
-	)
-    )
-);*/
-
 
 ?>
 
