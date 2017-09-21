@@ -159,7 +159,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-b">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-b" data-location="2">Comprar</a>
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-c">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-c" data-location="0">Comprar</a>
               </div>
             </div>
           </div>
@@ -214,7 +214,7 @@
                 <p></p>
               </div>
               <div class="extra">
-                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-d">Comprar</a>
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-d" data-location="1">Comprar</a>
               </div>
             </div>
           </div>
@@ -437,7 +437,7 @@
   </div>
 
 </div>
-<div class="ui modal">
+<div class="ui modal" id="buy-modal">
   <i class="close icon"></i>
   <div class="header">
     Confirmar compra
@@ -469,6 +469,9 @@
         </form>
     </div>
   </div>
+  <div class="modal-map" style="padding:0 20px 20px">
+    <div id="buymap" style="width:100%; height:300px;margin:0 auto"></div>
+  </div>
   
 </div>
   <script src="js/jquery.js"></script>
@@ -479,13 +482,40 @@
   <script src="dist/components/transition.js"></script>
   <script src="dist/components/modal.js"></script>
   <script>
+  // var locations = [
+  //   ['Location 1', -34.5965822628378, -58.369031023435515, 1],
+  //   ['Location 2', -32.59856053079477, -54.40653903430177, 1],
+  //   ['Location 3', -35.5965322628378, -57.369034023435515, 1]
+  // ];
+  var buymap;
+
+  var locations = [
+    {
+      name: 'Location 1',
+      lat: -34.5965822628378,
+      lng: -58.369031023435515
+    },
+    {
+      name: 'Location 2',
+      lat: -32.59856053079477,
+      lng: -54.40653903430177
+    },
+    {
+      name: 'Location 3',
+      lat: -35.5965322628378,
+      lng: -57.369034023435515
+    }
+  ];
+
   $(document).ready(function() {
+      
       $('.comprar-submit').click(function(){
         $('#form-compra').submit();
       });
       $('.comprar').click(function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
+        var loc = $(this).data('location');
         var image = $(this).data('image');
         var id = $(this).data('id');
         $('#title-input').val(title);
@@ -495,7 +525,24 @@
 
         $('#compra-titulo').html(title);
         $('#compra-img').attr('src',image);
-        $('.ui.modal').modal('show');
+        $('#buy-modal').modal({
+          onShow: function(){
+            buymap = new google.maps.Map(document.getElementById('buymap'), {
+              zoom: 8,
+              center: {lat: locations[loc].lat, lng: locations[loc].lng}
+            });
+            var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[loc].lat, locations[loc].lng),
+              map: buymap
+            });
+            buymap.panTo({lat: locations[loc].lat, lng: locations[loc].lng});
+          },
+          onVisible: function(){
+            google.maps.event.trigger(buymap, "resize");
+            buymap.setCenter({lat: locations[loc].lat, lng: locations[loc].lng});
+          }
+        }).modal('show');
+
       });
       $('.smooth-scrolling[href*="#"]')
         // Remove links that don't actually link to anything
@@ -547,6 +594,8 @@
 
       // create sidebar and attach to menu open
       $('.ui.sidebar').sidebar('attach events', '.toc.item');
+
+
      
     });
     //Animations
@@ -573,30 +622,27 @@
       });*/
   </script>
   <script>
-
   function rad(x) {return x*Math.PI/180;}
 
   // Creamos un mapa con las coordenadas actuales
   
   function initMap() {
     var infowindow = new google.maps.InfoWindow();
-    var locations = [
-      ['Location 1', -34.5965822628378, -58.369031023435515, 1],
-      ['Location 2', -32.59856053079477, -54.40653903430177, 1],
-      ['Location 3', -34.5965822628378, -58.369031023435515, 1]
-    ];
-    var myLatLng = {lat: -34.5965822628378, lng: -58.369031023435515};
-    var map = new google.maps.Map(document.getElementById('map'), {
+    
+    var mapOptions = {
       zoom: 8,
-      center: myLatLng
-    });
+      center: {lat: -34.5965822628378, lng: -58.369031023435515}
+    }
+
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    
     var marker, i;
     map.markers = []; 
 
 
     for (i = 0; i < locations.length; i++) {  
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
         map: map
 
     }); 
@@ -614,7 +660,7 @@
         for( i=0;i<map.markers.length; i++ ) {
             var mlat = map.markers[i].position.lat();
             var mlng = map.markers[i].position.lng();
-            map.markers[i].title = locations[i][0];
+            map.markers[i].title = locations[i].name;
             var dLat  = rad(mlat - lat);
             var dLong = rad(mlng - lng);
             var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -629,30 +675,28 @@
         }
         infowindow.setContent(map.markers[closest].title);
         infowindow.open(map, map.markers[closest]);
+        var center = new google.maps.LatLng(lat, lng);
+        map.panTo(center);
+      });    
 
-    });    
-
-});
+    });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
-      return function() {
-        infowindow.setContent(locations[i][0]);
-        infowindow.open(map, marker);
-      }
-    })(marker, i));
-  }   
-    
-
-
+        return function() {
+          infowindow.setContent(locations[i].name);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
   }
         
 
 
 
-    </script>
-    <script async defer
+  </script>
+  <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuA4fr6b0amjoCHPnO8DkHPkwAqi_xUs&callback=initMap">
-    </script>
+  </script>
 
 </body>
 
