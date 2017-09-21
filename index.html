@@ -528,7 +528,7 @@
         $('#buy-modal').modal({
           onShow: function(){
             buymap = new google.maps.Map(document.getElementById('buymap'), {
-              zoom: 8,
+              zoom: 14,
               center: {lat: locations[loc].lat, lng: locations[loc].lng}
             });
             var marker = new google.maps.Marker({
