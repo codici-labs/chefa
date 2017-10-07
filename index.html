@@ -76,70 +76,28 @@
     </div>
     </div>
   </div>
-  <!-- Ofertas principales-->
-  <div id="ofertas">
-    <div class="ui container main-title"><h2>Ofertas del día</h2></div>
+
+   <!--  Mustache JSON -->
+
+    <!-- <div id="ofertas" onload="loadUser()">
+    <div class="ui container main-title"><h2>Ofertas del día</h2>
     <div class="ui vertical stripe segment">
-      <div class="ui three stackable cards container">
-        <div class="ui card ofert-card card-1 animated">
-          <div class="image">
-            <img src="images/articulo.jpg">
-          </div>
-          <div class="content">
-            <a class="header">Milanesa con Papa Fritas</a>
-            <div class="ui ribbon green label">$1500</div>
-            <div class="meta">
-              <span class="date">Joined in 2013</span>
-            </div>
-            <div class="description">
-             Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
-            </div>
-          </div>
-          <div class="extra content">
-            <div class="ui basic green button">Comprar</div>
+    <div class="ui stackable two column grid">
+      <div class="column">
+        <div class="ui items">
+          <div class="item">
+                <div id="output"></div>
+                <script id="template" type="x-tmpl-mustache">
+                Hello {{ name }}!
+                </script>
           </div>
         </div>
-        <div class="ui card ofert-card animated card-2">
-          <div class="image">
-            <img src="images/articulo.jpg">
-          </div>
-
-          <div class="content">
-            <a class="header">Milanesa con Papa Fritas</a>
-             <div class="ui ribbon green label">$1500</div>
-            <div class="meta">
-              <span class="date">Joined in 2013</span>
-            </div>
-            <div class="description">
-             Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
-            </div>
-          </div>
-          <div class="extra content">
-            <div class="ui basic green button" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a">Comprar</div>
-          </div>
-        </div>
-        <div class="ui card ofert-card animated card-3">
-          <div class="image">
-            <img src="images/articulo.jpg">
-          </div>
-          <div class="content">
-            <a class="header">Milanesa con Papa Fritas</a>
-             <div class="ui ribbon green label">$1500</div>
-            <div class="meta">
-              <span class="date">Joined in 2013</span>
-            </div>
-            <div class="description">
-             Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.
-            </div>
-          </div>
-          <div class="extra content">
-            <div class="ui basic green button" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1">Comprar</div>
-          </div>
-        </div>
-      </div>  
+      </div>
     </div>
-  </div> 
-
+    </div>
+    </div>
+    </div>
+ -->
   <div id="ofertas">
     <div class="ui container main-title"><h2>Ofertas del día</h2>
     <div class="ui vertical stripe segment">
@@ -151,7 +109,7 @@
               <img src="images/articulo.jpg">
             </div>
             <div class="content">
-              <a class="header">Milanesa con Papa Fritas</a>
+              <a class="header">Ravioles con salsa mixta</a>
               <div class="meta">
                 <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
               </div>
@@ -168,7 +126,7 @@
               <img src="images/articulo.jpg">
             </div>
             <div class="content">
-              <a class="header">Milanesa con Papa Fritas</a>
+              <a class="header">Empanadas de carne</a>
               <div class="meta">
                 <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
               </div>
@@ -177,6 +135,57 @@
               </div>
               <div class="extra">
                 <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-b" data-location="2">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="images/articulo.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Ensalada Caesar</a>
+              <div class="meta">
+                <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="extra">
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="images/articulo.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Milanesa con papa fritas</a>
+              <div class="meta">
+                <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="extra">
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="images/articulo.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Pollo con arroz</a>
+              <div class="meta">
+                <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="extra">
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
               </div>
             </div>
           </div>
@@ -189,7 +198,7 @@
               <img src="images/articulo.jpg">
             </div>
             <div class="content">
-              <a class="header">Milanesa con Papa Fritas</a>
+              <a class="header">Pizza de Mozzarella (porción)</a>
               <div class="meta">
                 <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
               </div>
@@ -206,7 +215,7 @@
               <img src="images/articulo.jpg">
             </div>
             <div class="content">
-              <a class="header">Milanesa con Papa Fritas</a>
+              <a class="header">Sopa de vegetales</a>
               <div class="meta">
                 <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
               </div>
@@ -218,11 +227,60 @@
               </div>
             </div>
           </div>
+          <div class="item">
+            <div class="image">
+              <img src="images/articulo.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Polenta con salsa de tomate y queso (porción)</a>
+              <div class="meta">
+                <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="extra">
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="images/articulo.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Pastel de carne (porción)</a>
+              <div class="meta">
+                <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="extra">
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="images/articulo.jpg">
+            </div>
+            <div class="content">
+              <a class="header">Sushi</a>
+              <div class="meta">
+                <span> Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="extra">
+                <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      
     </div> 
-
     </div>
     </div>
   </div>  
@@ -390,13 +448,29 @@
     <label  style="padding-bottom: 10px;">Teléfono</label>
     <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
   </div>
-
   <div class="ui form">
   <div class="field form-style">
     <label  style="padding-bottom: 10px;">Comentario</label>
     <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
   </div>
-  </div><br><br>
+  </div>
+  <br>
+  <div class="inline fields form-style">
+    <label>Eres Chef o Comprador?</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency" required="required">
+        <label>Chef</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="frequency">
+        <label>Comprador?</label>
+      </div>
+    </div>
+  </div>
+  <br>
 <div class="ui center aligned " align="center"> 
   <button   class="ui big blue button " type="Submit">¡Enviar!</button>
 </div>
@@ -481,7 +555,12 @@
   <script src="dist/components/sidebar.js"></script>
   <script src="dist/components/transition.js"></script>
   <script src="dist/components/modal.js"></script>
+  <script src="js/mustache.min.js"></script>
+  <script type="text/javascript" src="js/d3.min.js"></script>
+  <script type="text/javascript" src="js/d3cloud.js"></script>
+  <script src="//d3js.org/queue.v1.min.js"></script>
   <script>
+
   // var locations = [
   //   ['Location 1', -34.5965822628378, -58.369031023435515, 1],
   //   ['Location 2', -32.59856053079477, -54.40653903430177, 1],
@@ -508,7 +587,23 @@
   ];
 
   $(document).ready(function() {
-      
+
+    // MUSTACHE JS
+
+    // function loadUser() {
+    //   var output = $("#output"); 
+    //   var template = $('#template').html();
+    //   var data1 = "This is Test 1 data";
+    //   var rendered = Mustache.render(template, data1);
+    //   output.append(rendered);
+    // }
+
+        queue().defer(d3.json, './platosdeldia.json') // LOCAL    
+        .await(function(error, data) {
+          if (error) throw error;
+            console.log(data);
+        });
+
       $('.comprar-submit').click(function(){
         $('#form-compra').submit();
       });
@@ -594,10 +689,11 @@
 
       // create sidebar and attach to menu open
       $('.ui.sidebar').sidebar('attach events', '.toc.item');
-
-
-     
     });
+
+
+
+
     //Animations
     /*$('.card-1').waypoint(function() {    
         $('.card-1').addClass('animated pulse');
@@ -689,7 +785,6 @@
       })(marker, i));
     }
   }
-        
 
 
 
