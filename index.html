@@ -32,7 +32,7 @@
     <div class="right menu">
      
       <div class="item">
-        <a class="ui button">Registrate</a>
+        <a class="ui button smooth-scrolling" href="#contacto">Registrate</a>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
   <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
   <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
   <a href="#contacto" class="item smooth-scrolling">Contacto</a>
-  <a class="item">Registrate</a>
+  <a href="#contacto" class="item smooth-scrolling">Registrate</a>
 </div>
 
 
@@ -76,46 +76,20 @@
     </div>
     </div>
   </div>
-
-   <!--  Mustache JSON -->
-
-    <script id="template" type="text/template">
-      <div id="ofertas">
-        <div class="ui container main-title">
-          <h2>Ofertas del día</h2>
-          <div class="ui vertical stripe segment">
-            <div class="ui stackable two column grid">
-              {{#platosdeldia}}
-              <div class="column">
-                <div class="ui items">
-                  <div class="item">
-                    <div class="image">
-                      <img src={{img}}>
-                    </div>
-                    <div class="content">
-                      <a class="header">
-                      {{plato}}</a>
-                      <div class="meta">
-                        <span> {{comentario}}</span>
-                      </div>
-                      <div class="description">
-                        <p></p>
-                      </div>
-                      <div class="extra">
-                        <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="Milanesa con Papa Fritas" data-product-price="1500" data-image="images/articulo.jpg" data-id="1-a" data-location="2">Comprar</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {{/platosdeldia}}
-            </div> 
-          </div>
-        </div>
+    
+  <!-- Platios del dia -->
+  <div id="ofertas">
+    <div class="ui container main-title">
+      <h2>Ofertas del día</h2>
+      <div class="ui vertical stripe segment">
+        <div class="ui unstackable two column grid" id="target">
+          
+         </div>
       </div>
-    </script>
-    <div class="target"></div>  
-
+    </div>
+  </div>         
+   
+  <!-- / ofertas principales -->
   <div id="nosotros" class="ui vertical stripe quote segment order">
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
@@ -132,7 +106,7 @@
     </div>
   </div>
 
-  <!-- / ofertas principales -->
+ 
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
@@ -264,48 +238,48 @@
  
 
   <div id="contacto" class="ui container testimonials ">
-    <h3 class="ui header">¡Registrate!</h3>
+    <h3 class="ui header">Registrate</h3>
     <div class=" center aligned">
-      <form class="ui form">
-  <div class="field form-style">
-    <label style="padding-bottom: 10px;">Nombre</label>
-    <input type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
-  </div>
-  <div class="field form-style">
-    <label  style="padding-bottom: 10px;">e-Mail</label>
-    <input type="email" name="email" placeholder="Tu e-mail" required title="Por favor ingrese su email">
-  </div>
-  <div class="field form-style">
-    <label  style="padding-bottom: 10px;">Teléfono</label>
-    <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
-  </div>
-  <div class="ui form">
-  <div class="field form-style">
-    <label  style="padding-bottom: 10px;">Comentario</label>
-    <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
-  </div>
-  </div>
-  <br>
-  <div class="inline fields form-style">
-    <label>Eres Chef o Comprador?</label>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="frequency" required="required">
-        <label>Chef</label>
-      </div>
-    </div>
-    <div class="field">
-      <div class="ui radio checkbox">
-        <input type="radio" name="frequency">
-        <label>Comprador?</label>
-      </div>
-    </div>
-  </div>
-  <br>
-<div class="ui center aligned " align="center"> 
-  <button   class="ui big blue button " type="Submit">¡Enviar!</button>
-</div>
-</form>
+      <form class="ui tiny form">
+        <div class="field form-style">
+          <label style="padding-bottom: 10px;">Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+        </div>
+        <div class="field form-style">
+          <label  style="padding-bottom: 10px;">E-mail</label>
+          <input type="email" name="email" placeholder="Tu e-mail" required title="Por favor ingrese su email">
+        </div>
+        <div class="field form-style">
+          <label  style="padding-bottom: 10px;">Teléfono</label>
+          <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+        </div>
+        <div class="ui form">
+        <div class="field form-style">
+          <label  style="padding-bottom: 10px;">Comentario</label>
+          <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
+        </div>
+        </div>
+        <br>
+        <div class="inline fields form-style">
+          <label>Registrarse como</label>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="type" required="required">
+              <label for="type">Chef</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="type">
+              <label for="type">Comprador</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="ui center aligned " align="center"> 
+          <button   class="ui big blue button " type="Submit">Enviar</button>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -379,6 +353,32 @@
   </div>
   
 </div>
+
+
+  <script id="template" type="text/template">     
+    <div class="column">
+      <div class="ui items">
+        <div class="item">
+          <div class="image">
+            <img src={{data.img}}>
+          </div>
+          <div class="content">
+            <a class="header">
+            {{data.plato}}</a>
+            <div class="meta">
+              <span>{{data.comentario}}</span>
+            </div>
+            <div class="description">
+              <p></p>
+            </div>
+            <div class="extra">
+              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
   <script src="js/jquery.js"></script>
   <script src="js/jquery.waypoints.js"></script>
   <script src="js/semantic.min.js"></script>
@@ -387,16 +387,9 @@
   <script src="dist/components/transition.js"></script>
   <script src="dist/components/modal.js"></script>
   <script src="js/mustache.min.js"></script>
-  <script type="text/javascript" src="js/d3.min.js"></script>
-  <script type="text/javascript" src="js/d3cloud.js"></script>
-  <script src="//d3js.org/queue.v1.min.js"></script>
+
   <script>
 
-  // var locations = [
-  //   ['Location 1', -34.5965822628378, -58.369031023435515, 1],
-  //   ['Location 2', -32.59856053079477, -54.40653903430177, 1],
-  //   ['Location 3', -35.5965322628378, -57.369034023435515, 1]
-  // ];
   var buymap;
 
   var locations = [
@@ -508,33 +501,15 @@
 
     $.getJSON('./platosdeldia.json', {}, function(data) {
       var template = $('#template').html();
-      console.log(data);
-      var output = Mustache.render(template, data);
-      $(".target").html(output);
+    
+      $.each(data.platosdeldia, function(k, v) {
+          var rendered = Mustache.render(template, {data: v});
+          $('#target').append(rendered);
+      });
+
     });
 
-    //Animations
-    /*$('.card-1').waypoint(function() {    
-        $('.card-1').addClass('animated pulse');
-              
-      }, {
-        offset: '85%'
-      });
-      
-      $('.card-2').waypoint(function() {       
-           setTimeout(function(){
-            $('.card-2').addClass('animated pulse')
-           }, 100);
-      }, {
-        offset: '85%'
-      });
-      $('.card-3').waypoint(function() {       
-           setTimeout(function(){
-            $('.card-3').addClass('animated pulse')
-           }, 200);
-      }, {
-        offset: '85%'
-      });*/
+  
   </script>
   <script>
   function rad(x) {return x*Math.PI/180;}
