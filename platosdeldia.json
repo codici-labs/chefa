@@ -1,12 +1,14 @@
-[
-	{"id": 0, "plato": "Ravioles con salsa mixta", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 1, "plato": "Empanadas de carne", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 2, "plato": "Pizza de Mozzarella (porción)", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 3, "plato": "Sopa de vegetales", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 4, "plato": "Ensalada Caesar", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 5, "plato": "Milanesa con papa fritas", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 6, "plato": "Pollo con arroz", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 7, "plato": "Polenta con salsa de tomate y queso (porción)", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 8, "plato": "Pastel de carne (porción)", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-	{"id": 9, "plato": "Sushi", "comentario": "lala", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"}
-]
+{
+	"platosdeldia": [
+		{"id": 0, "plato": "Ravioles con salsa mixta", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 1, "plato": "Empanadas de carne", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 2, "plato": "Pizza de Mozzarella (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 3, "plato": "Sopa de vegetales", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 4, "plato": "Ensalada Caesar", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 5, "plato": "Milanesa con papa fritas", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 6, "plato": "Pollo con arroz", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 7, "plato": "Polenta con salsa de tomate y queso (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 8, "plato": "Pastel de carne (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
+		{"id": 9, "plato": "Sushi", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"}
+	]
+}
