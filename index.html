@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<style>
-.form-style {
-  font-size: 1.5em;
-   }
-</style>
+
 <html>
 <head>
   <!-- Standard Meta -->
@@ -17,7 +13,30 @@
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style>
+    .form-style {
+      font-size: 1.5em;
+    }
 
+    @media only screen and (max-width: 992px) {
+      .ui.vertical.stripe {
+        padding: 5em 0em;
+      }
+    }
+    
+    @media only screen and (max-width: 767px) {
+      .ui.vertical.stripe {
+        padding: 1em 0em;
+      }
+      #ofertas {
+        padding-top: 50px;
+      }
+
+      .home {
+      background-position-x: 50%!important;
+      }
+    }
+  </style>
  
 </head>
 <body>
@@ -107,13 +126,13 @@
   </div>
 
  
-  <div class="ui vertical stripe segment">
+  <!-- <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="sixteen wide column" id="mas-ofertas">
           <h2 class="ui header">Más ofertas</h2>
           
-          <!-- Ofertas del dia -->
+       
           <div class="ui items">
             <div class="item">
               <div class="ui small image">
@@ -182,14 +201,14 @@
               </div>
             </div>
           </div>
-         <!-- / ofertas del dia --> 
+
 
         </div>
         
       </div>
      
     </div>
-  </div>
+  </div> -->
 
 
   <div class="ui vertical stripe quote segment order">
