@@ -14,8 +14,12 @@
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <style>
+    .pad-reg{
+      padding-top: 60px;
+    }
+
     .form-style {
-      font-size: 1.5em;
+      font-size: 1.5em; 
     }
 
     @media only screen and (max-width: 992px) {
@@ -47,11 +51,11 @@
     <a href="#home" class="active item smooth-scrolling">Home</a>
     <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
     <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
-    <a href="#contacto" class="item smooth-scrolling">Contacto</a>
+    <a  class="item smooth-scrolling contacto">Contacto</a>
     <div class="right menu">
      
       <div class="item">
-        <a class="ui button smooth-scrolling" href="#contacto">Registrate</a>
+        <a class="ui button smooth-scrolling" href="#register">Registrate</a>
       </div>
     </div>
   </div>
@@ -62,8 +66,8 @@
   <a href="#home" class="item active smooth-scrolling">Home</a>
   <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
   <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
-  <a href="#contacto" class="item smooth-scrolling">Contacto</a>
-  <a href="#contacto" class="item smooth-scrolling">Registrate</a>
+  <a  class="item smooth-scrolling contacto">Contacto</a>
+  <a href="#register" class="item smooth-scrolling">Registrate</a>
 </div>
 
 
@@ -79,9 +83,9 @@
         <a href="#home" class="item active smooth-scrolling">Home</a>
         <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
         <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
-        <a href="#contacto" class="item smooth-scrolling">Contacto</a>
+        <a  class="item smooth-scrolling contacto">Contacto</a>
         <div class="right item">
-          <a class="ui inverted button">Registrate</a>
+          <a href="#register" class="ui inverted button">Registrate</a>
         </div>
       </div>
     </div>
@@ -91,7 +95,9 @@
         Hay un chef cerca tuyo
       </h1>
       <h2>¿Querés participar?</h2>
-      <div class="ui huge primary button">Registrate <i class="right arrow icon"></i></div>
+      <a href="#register"  class="item smooth-scrolling" style="text-decoration: none;">
+      <div class="ui huge primary button" >Registrate<i class="right arrow icon"></i></div>
+      </a>
     </div>
     </div>
   </div>
@@ -256,7 +262,7 @@
   </div>
  
 
-  <div id="contacto" class="ui container testimonials ">
+  <div id="register" class="ui container testimonials pad-reg ">
     <h3 class="ui header">Registrate</h3>
     <div class=" center aligned">
       <form class="ui tiny form">
@@ -335,6 +341,40 @@
   </div>
 
 </div>
+
+<div class="ui modal" id="contacto-modal">
+  <div class="header">Nos interesa saber tu opinión.</div>
+  <div class="content">
+   
+    <div class=" center aligned">
+      <form class="ui tiny form">
+        <div class="field form-style">
+          <label style="padding-bottom: 10px;">Nombre</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+        </div>
+        <div class="field form-style">
+          <label  style="padding-bottom: 10px;">E-mail</label>
+          <input type="email" name="email" placeholder="Tu e-mail" required title="Por favor ingrese su email">
+        </div>
+        <div class="field form-style">
+          <label  style="padding-bottom: 10px;">Teléfono</label>
+          <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+        </div>
+        <div class="ui form">
+        <div class="field form-style">
+          <label  style="padding-bottom: 10px;">Comentario</label>
+          <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
+        </div>
+        </div>
+  </div>
+  <br><br>
+           <div class="ui center aligned " align="right"> 
+          <button   class="ui big blue button " type="Submit">Enviar</button>
+        </div>
+  </form>
+</div>
+
+
 <div class="ui modal" id="buy-modal">
   <i class="close icon"></i>
   <div class="header">
@@ -430,6 +470,11 @@
   ];
 
   $(document).ready(function() {
+
+        $('.contacto').click(function(){
+          console.log('aaasd');
+          $('#contacto-modal').modal('show');
+        });
 
       $('.comprar-submit').click(function(){
         $('#form-compra').submit();
