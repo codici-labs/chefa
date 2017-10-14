@@ -302,7 +302,7 @@
         </div>
         <br>
         <div class="ui center aligned " align="center"> 
-          <button   class="ui big blue button " type="Submit">Enviar</button>
+          <button class="ui big blue button " type="Submit">Enviar</button>
         </div>
       </form>
     </div>
@@ -427,11 +427,14 @@
             <div class="meta">
               <span>{{data.comentario}}</span>
             </div>
+            <div class="meta">
+              <span>Cocinero: {{data.cocinero}}</span>
+            </div>
             <div class="description">
               <p></p>
             </div>
             <div class="extra">
-              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="{{data.cocinero}}">Comprar</a>
+              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-longitud="{{data.location.lng}}" data-latitud="{{data.location.lat}}">Comprar</a>
             </div>
           </div>
         </div>
@@ -469,42 +472,6 @@
     }
   ];
 
-  var cocineros = [
-    {
-      nombre: 'Federico Pastori',
-      direccion: 'juncal 1945 4a',
-      mail: 'fedepastori@hotmail.com',
-      horario: 'lunes martes y jueves. Hasta las 18 toma pedidos ',
-      location = [
-      {
-        lat: -34.5933264,
-        lng: -58.3970423
-      }
-    },
-    {
-      nombre: 'Federico Pastori 2',
-      direccion: 'juncal 1945 4a',
-      mail: 'fedepastori@hotmail.com',
-      horario: 'lunes martes y jueves. Hasta las 18 toma pedidos ',
-      location = [
-      {
-        lat: -34.5933264,
-        lng: -58.3970423
-      }
-    },
-    {
-      nombre: 'Federico Pastori 3',
-      direccion: 'juncal 1945 4a',
-      mail: 'fedepastori@hotmail.com',
-      horario: 'lunes martes y jueves. Hasta las 18 toma pedidos ',
-      location = [
-      {
-        lat: -34.5933264,
-        lng: -58.3970423
-      }
-    },
-  ];
-
   $(document).ready(function() {
 
         $('.contacto').click(function(){
@@ -514,10 +481,13 @@
       $('.comprar-submit').click(function(){
         $('#form-compra').submit();
       });
-      $('.comprar').click(function(){
+
+
+      $('#target').on('click' ,'.comprar', function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
-        var loc = $(this).data('location');
+        var lat = $(this).data('latitud');
+        var lng = $(this).data('longitud');
         var image = $(this).data('image');
         var id = $(this).data('id');
         $('#title-input').val(title);
@@ -531,17 +501,17 @@
           onShow: function(){
             buymap = new google.maps.Map(document.getElementById('buymap'), {
               zoom: 14,
-              center: {lat: locations[loc].lat, lng: locations[loc].lng}
+              center: {lat: lat, lng: lng}
             });
             var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(locations[loc].lat, locations[loc].lng),
+              position: new google.maps.LatLng(lat, lng),
               map: buymap
             });
-            buymap.panTo({lat: locations[loc].lat, lng: locations[loc].lng});
+            buymap.panTo({lat: lat, lng: lng});
           },
           onVisible: function(){
             google.maps.event.trigger(buymap, "resize");
-            buymap.setCenter({lat: locations[loc].lat, lng: locations[loc].lng});
+            buymap.setCenter({lat: lat, lng: lng});
           }
         }).modal('show');
 
@@ -600,12 +570,10 @@
 
     $.getJSON('./platosdeldia.json', {}, function(data) {
       var template = $('#template').html();
-    
       $.each(data.platosdeldia, function(k, v) {
           var rendered = Mustache.render(template, {data: v});
           $('#target').append(rendered);
       });
-
     });
 
   

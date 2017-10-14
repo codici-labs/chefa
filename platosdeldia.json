@@ -1,15 +1,180 @@
 {
 	"platosdeldia": [
-		{"id": 0, "plato": "Ravioles con salsa mixta", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 1, "plato": "Empanadas de carne", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 2, "plato": "Pizza de Mozzarella (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 3, "plato": "Sopa de vegetales", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 4, "plato": "Ensalada Caesar", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 5, "plato": "Milanesa con papa fritas", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 6, "plato": "Pollo con arroz", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 7, "plato": "Polenta con salsa de tomate y queso (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 8, "plato": "Pastel de carne (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
-		{"id": 9, "plato": "Sushi", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"}
-		{"id": 10, "plato": "Pollo al curry con leche de coco", "comentario": "Viene en dos versiones: clasica o picante", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"}
+		{
+			"id": 0, 
+			"plato": "Ravioles con salsa mixta", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Federico Pastori", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 1, 
+			"plato": "Empanadas de carne", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Angel Di Maria", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": 52.5186,
+	        	"lng": 13.4081
+	      	}
+		},
+		{
+			"id": 2, 
+			"plato": "Pizza de Mozzarella (porción)", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Enzo Perez", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 3, 
+			"plato": "Sopa de vegetales", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Fernando Gago", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 4, 
+			"plato": "Ensalada Caesar", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Rodrigo Palacio", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 5, 
+			"plato": "Milanesa con papa fritas", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Hector Bracamonte", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 6, 
+			"plato": "Pollo con arroz", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Jorge Da Silva", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 7, 
+			"plato": "Polenta con salsa de tomate y queso (porción)", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Martin Lunati", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 8, 
+			"plato": "Pastel de carne (porción)", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Alberto Marcico", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 9, 
+			"plato": "Sushi", 
+			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Silvio Rodriguez", 
+			"precio":"250",
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+		},
+		{
+			"id": 10, 
+			"plato": "Pollo al curry con leche de coco", 
+			"comentario": "Viene en dos versiones: clasica o picante", 
+			"img": "./images/articulo.jpg", 
+			"cocinero":"Nicole Neumann", 
+			"precio":"250", 
+			"direccion": "juncal 1945 4a", 
+			"mail": "fedepastori@hotmail.com", 
+			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
+			"location":
+	      	{
+	        	"lat": -34.5933264,
+	        	"lng": -58.3970423
+	      	}
+  		}
 	]
 }
