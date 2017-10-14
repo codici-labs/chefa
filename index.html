@@ -431,7 +431,7 @@
               <p></p>
             </div>
             <div class="extra">
-              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
+              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="{{data.cocinero}}">Comprar</a>
             </div>
           </div>
         </div>
@@ -469,10 +469,45 @@
     }
   ];
 
+  var cocineros = [
+    {
+      nombre: 'Federico Pastori',
+      direccion: 'juncal 1945 4a',
+      mail: 'fedepastori@hotmail.com',
+      horario: 'lunes martes y jueves. Hasta las 18 toma pedidos ',
+      location = [
+      {
+        lat: -34.5933264,
+        lng: -58.3970423
+      }
+    },
+    {
+      nombre: 'Federico Pastori 2',
+      direccion: 'juncal 1945 4a',
+      mail: 'fedepastori@hotmail.com',
+      horario: 'lunes martes y jueves. Hasta las 18 toma pedidos ',
+      location = [
+      {
+        lat: -34.5933264,
+        lng: -58.3970423
+      }
+    },
+    {
+      nombre: 'Federico Pastori 3',
+      direccion: 'juncal 1945 4a',
+      mail: 'fedepastori@hotmail.com',
+      horario: 'lunes martes y jueves. Hasta las 18 toma pedidos ',
+      location = [
+      {
+        lat: -34.5933264,
+        lng: -58.3970423
+      }
+    },
+  ];
+
   $(document).ready(function() {
 
         $('.contacto').click(function(){
-          console.log('aaasd');
           $('#contacto-modal').modal('show');
         });
 

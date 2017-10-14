@@ -10,5 +10,6 @@
 		{"id": 7, "plato": "Polenta con salsa de tomate y queso (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
 		{"id": 8, "plato": "Pastel de carne (porción)", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"},
 		{"id": 9, "plato": "Sushi", "comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"}
+		{"id": 10, "plato": "Pollo al curry con leche de coco", "comentario": "Viene en dos versiones: clasica o picante", "img": "./images/articulo.jpg", "cocinero":"sarasa", "precio":"250"}
 	]
 }
