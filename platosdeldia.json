@@ -164,7 +164,7 @@
 			"id": 10, 
 			"plato": "Pollo al curry con leche de coco", 
 			"comentario": "Viene en dos versiones: clasica o picante", 
-			"img": "./images/articulo.jpg", 
+			"img": "./images/pollo-al-curry.png", 
 			"cocinero":"Nicole Neumann", 
 			"precio":"250", 
 			"direccion": "juncal 1945 4a", 
