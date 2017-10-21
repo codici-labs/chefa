@@ -261,52 +261,55 @@
     </div>
   </div>
  
-
-  <div id="register" class="ui container testimonials pad-reg ">
-    <h3 class="ui header">Registrate</h3>
-    <div class=" center aligned">
-      <form class="ui tiny form">
-        <div class="field form-style">
-          <label style="padding-bottom: 10px;">Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
-        </div>
-        <div class="field form-style">
-          <label  style="padding-bottom: 10px;">E-mail</label>
-          <input type="email" name="email" placeholder="Tu e-mail" required title="Por favor ingrese su email">
-        </div>
-        <div class="field form-style">
-          <label  style="padding-bottom: 10px;">Teléfono</label>
-          <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
-        </div>
-        <div class="ui form">
-        <div class="field form-style">
-          <label  style="padding-bottom: 10px;">Comentario</label>
-          <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
-        </div>
-        </div>
-        <br>
-        <div class="inline fields form-style">
-          <label>Registrarse como</label>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="type" required="required">
-              <label for="type">Chef</label>
+    <div id="register" class="ui container testimonials pad-reg">
+      <h3 class="ui header">Registrate</h3>
+      <div class="center aligned">
+        <form class="ui tiny form">
+          <div class="column">
+            <h4>Registrarse como</h4>
+            <div class="inline fields form-style ui center aligned">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="type" required="required">
+                    <label for="type">Chef</label>
+                  </div>
+                </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="type">
+                  <label for="type">Comprador</label>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input type="radio" name="type">
-              <label for="type">Comprador</label>
+          <div class="ui stackable two column grid">
+            <div class="column">
+              <div class="field form-style">
+                <label style="padding-bottom: 10px;">Nombre</label>
+                <input class="ui blue basic label" type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+              </div>
+              <div class="field form-style">
+                <label  style="padding-bottom: 10px;">E-mail</label>
+                <input class="ui blue basic label" type="email" name="email" placeholder="Tu e-mail" required title="Por favor ingrese su email">
+              </div>
+              <div class="field form-style">
+                <label  style="padding-bottom: 10px;">Teléfono</label>
+                <input class="ui blue basic label" type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+              </div>
             </div>
+            <div class="column">
+              <div class="field form-style">
+                <label  style="padding-bottom: 10px;">Comentario</label>
+                <textarea class="ui blue basic label" name="comentario" required title="Por favor deje un comentario!"></textarea>
+              </div>
+            </div>
+          </div><br />
+          <div class="ui center aligned" align="center">
+            <button   class="ui big blue button " type="Submit">Enviar</button>
           </div>
-        </div>
-        <br>
-        <div class="ui center aligned " align="center"> 
-          <button class="ui big blue button " type="Submit">Enviar</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
 
 
 
@@ -427,14 +430,11 @@
             <div class="meta">
               <span>{{data.comentario}}</span>
             </div>
-            <div class="meta">
-              <span>Cocinero: {{data.cocinero}}</span>
-            </div>
             <div class="description">
               <p></p>
             </div>
             <div class="extra">
-              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-longitud="{{data.location.lng}}" data-latitud="{{data.location.lat}}">Comprar</a>
+              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
             </div>
           </div>
         </div>
@@ -475,19 +475,17 @@
   $(document).ready(function() {
 
         $('.contacto').click(function(){
+          console.log('aaasd');
           $('#contacto-modal').modal('show');
         });
 
       $('.comprar-submit').click(function(){
         $('#form-compra').submit();
       });
-
-
-      $('#target').on('click' ,'.comprar', function(){
+      $('.comprar').click(function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
-        var lat = $(this).data('latitud');
-        var lng = $(this).data('longitud');
+        var loc = $(this).data('location');
         var image = $(this).data('image');
         var id = $(this).data('id');
         $('#title-input').val(title);
@@ -501,17 +499,17 @@
           onShow: function(){
             buymap = new google.maps.Map(document.getElementById('buymap'), {
               zoom: 14,
-              center: {lat: lat, lng: lng}
+              center: {lat: locations[loc].lat, lng: locations[loc].lng}
             });
             var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(lat, lng),
+              position: new google.maps.LatLng(locations[loc].lat, locations[loc].lng),
               map: buymap
             });
-            buymap.panTo({lat: lat, lng: lng});
+            buymap.panTo({lat: locations[loc].lat, lng: locations[loc].lng});
           },
           onVisible: function(){
             google.maps.event.trigger(buymap, "resize");
-            buymap.setCenter({lat: lat, lng: lng});
+            buymap.setCenter({lat: locations[loc].lat, lng: locations[loc].lng});
           }
         }).modal('show');
 
@@ -570,10 +568,12 @@
 
     $.getJSON('./platosdeldia.json', {}, function(data) {
       var template = $('#template').html();
+    
       $.each(data.platosdeldia, function(k, v) {
           var rendered = Mustache.render(template, {data: v});
           $('#target').append(rendered);
       });
+
     });
 
   
