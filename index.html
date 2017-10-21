@@ -270,13 +270,13 @@
                 <label class="form-label">Registrarse como</label>
                 <div class="field">
                   <div class="ui radio checkbox">
-                    <input id="type-chef" type="radio" name="type" required="required">
+                    <input id="type-chef" type="radio" value="Chef" name="type" required="required">
                     <label for="type-chef">Chef</label>
                   </div>
                 </div>
               <div class="field">
                 <div class="ui radio checkbox">
-                  <input id ="type-buyer" type="radio" name="type">
+                  <input id ="type-buyer" type="radio"  value="Comprador" name="type">
                   <label for="type-buyer">Comprador</label>
                 </div>
               </div>
@@ -286,7 +286,7 @@
             <div class="column">
               <div class="field form-style">
                 <label style="padding-bottom: 10px;">Nombre</label>
-                <input class="ui blue basic label" type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+                <input class="ui blue basic label" type="text" name="name" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
               </div>
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">E-mail</label>
@@ -294,13 +294,13 @@
               </div>
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">Teléfono</label>
-                <input class="ui blue basic label" type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+                <input class="ui blue basic label" type="text" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
               </div>
             </div>
             <div class="column">
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">Comentario</label>
-                <textarea class="ui blue basic label" name="comentario" required title="Por favor deje un comentario!"></textarea>
+                <textarea class="ui blue basic label" name="message" required title="Por favor deje un comentario!"></textarea>
               </div>
             </div>
           </div><br />
@@ -352,7 +352,7 @@
       <form class="ui tiny form">
         <div class="field form-style">
           <label style="padding-bottom: 10px;">Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+          <input type="text" name="nombre" placeholder="Tu nombre" required title="Por favor ingrese su nombre">
         </div>
         <div class="field form-style">
           <label  style="padding-bottom: 10px;">E-mail</label>
@@ -645,6 +645,57 @@
       })(marker, i));
     }
   }
+
+  $(document).ready(function(){
+      //  $('.send').click(function(e){
+
+      //    if($("form")[0].checkValidity()) {
+      //      e.preventDefault();
+      //      $.ajax({
+          //   url: 'send-mail.php',
+          //   method: 'post',
+          //   data: {name: $('#name').val(), phone: $('#phone').val(), message: $('#message').val(), nameInst: $('#nameInst').val(), email: $('#email').val(),  },
+          //   success: function(){
+          //    $('.modal').modal();
+          //   }
+          // });
+      //    }
+      //  });
+        $('#contact-form').on('submit',function(event){
+          event.preventDefault();
+          if($('#type').val() == '' || $('#name').val() == '' || $('#email').val() == '' || $('#phone').val() == '' || $('#message ').val() == '') {
+            $('.errors').show();
+            return false;
+          }else{
+            $('.errors').hide();
+            $.ajax({
+            url: 'send-mail.php',
+            method: 'post',
+            data: {name: $('#type').val(), phone: $('#phone').val(), message: $('#message').val(), name: $('#name').val(), email: $('#email').val(),  },
+              success: function(){
+                $('.modal').modal();
+              }
+            });
+            return false
+
+          }
+          
+        
+          /*event.preventDefault();
+          if($("form")[0].checkValidity()) {
+            $.ajax({
+            url: 'send-mail.php',
+            method: 'post',
+            data: {name: $('#name').val(), phone: $('#phone').val(), message: $('#message').val(), nameInst: $('#nameInst').val(), email: $('#email').val(),  },
+            success: function(){
+              $('.modal').modal();
+            }
+          });
+          }else{
+            alert('asd')
+          }*/
+        });
+      });
 
 
 
