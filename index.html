@@ -132,7 +132,7 @@
   </div>
 
  
-  <!-- <div class="ui vertical stripe segment">
+  <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="sixteen wide column" id="mas-ofertas">
@@ -214,7 +214,7 @@
       </div>
      
     </div>
-  </div> -->
+  </div>
 
 
   <div class="ui vertical stripe quote segment order">
@@ -264,7 +264,7 @@
     <div id="register" class="ui container testimonials pad-reg">
       <h3 class="ui header">Registrate</h3>
       
-        <form class="ui tiny form">
+        <form class="ui tiny form" id="contact-form">
           <div class="column">
             <div class="inline fields ui grid container centered">
                 <label class="form-label">Registrarse como</label>
@@ -286,7 +286,7 @@
             <div class="column">
               <div class="field form-style">
                 <label style="padding-bottom: 10px;">Nombre</label>
-                <input class="ui blue basic label" type="text" name="name" placeholder="Tu nombre" required pattern="!@#$%^&*(){}]['/.,<>:" title="Por favor ingrese su nombre">
+                <input class="ui blue basic label" type="text" name="name" placeholder="Tu nombre" required title="Por favor ingrese su nombre">
               </div>
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">E-mail</label>
@@ -305,7 +305,7 @@
             </div>
           </div><br />
           <div class="ui center aligned" align="center">
-            <button   class="ui big blue button " type="Submit">Enviar</button>
+            <button class="ui big blue button">Enviar</button>
           </div>
         </form>
     </div>
@@ -349,7 +349,7 @@
   <div class="content">
    
     <div class=" center aligned">
-      <form class="ui tiny form">
+      <!-- <form class="ui tiny form" method="POST">
         <div class="field form-style">
           <label style="padding-bottom: 10px;">Nombre</label>
           <input type="text" name="nombre" placeholder="Tu nombre" required title="Por favor ingrese su nombre">
@@ -362,18 +362,14 @@
           <label  style="padding-bottom: 10px;">Teléfono</label>
           <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
         </div>
-        <div class="ui form">
         <div class="field form-style">
           <label  style="padding-bottom: 10px;">Comentario</label>
           <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
         </div>
+        <div class="ui center aligned " align="right"> 
+          <a class="ui big blue button " type="Submit">Enviar</a>
         </div>
-  </div>
-  <br><br>
-           <div class="ui center aligned " align="right"> 
-          <button   class="ui big blue button " type="Submit">Enviar</button>
-        </div>
-  </form>
+  </form> -->
 </div>
 
 
@@ -388,7 +384,7 @@
     </div>
     <div class="description">
       <div class="ui header" id="compra-titulo"></div>
-        <form class="ui form" id="form-compra" method="post" action="pago.php">
+        <!-- <form class="ui form" id="form-compra" method="post" action="pago.php">
           <div class="field">
             <label>Cantidad</label>
             <input name="amount" type="number" value="1">
@@ -406,7 +402,7 @@
               <i class="checkmark icon"></i>
             </a>
           </div>
-        </form>
+        </form> -->
     </div>
   </div>
   <div class="modal-map">
@@ -661,24 +657,23 @@
           // });
       //    }
       //  });
-        $('#contact-form').on('submit',function(event){
-          event.preventDefault();
-          if($('#type').val() == '' || $('#name').val() == '' || $('#email').val() == '' || $('#phone').val() == '' || $('#message ').val() == '') {
-            $('.errors').show();
-            return false;
-          }else{
-            $('.errors').hide();
-            $.ajax({
-            url: 'send-mail.php',
-            method: 'post',
-            data: {name: $('#type').val(), phone: $('#phone').val(), message: $('#message').val(), name: $('#name').val(), email: $('#email').val(),  },
-              success: function(){
-                $('.modal').modal();
-              }
-            });
-            return false
-
-          }
+        // $('#contact-form button').on('click',function(event){
+        //   if($('input[name="type"]').val() == '' || $('input[name="name"]').val() == '' || $('input[name="email"]').val() == '' || $('input[name="phone"]').val() == '' || $('textarea[name="message"] ').val() == '') {
+        //     $('.errors').show();
+        //     return false;
+        //   } else {
+        //     $('.errors').hide();
+            
+        //     $.ajax({
+        //       url: 'send-mail.php',
+        //       method: 'post',
+        //       data: { type: $('input[name="type"]').val(), phone: $('input[name="phone"]').val(), message: $('textarea[name="message"]').val(), name: $('input[name="name"]').val(), email: $('input[name="email"]').val() },
+        //       success: function(){
+        //         $('.modal').modal();
+        //       }
+        //     });
+        //     return false;
+        //   }
           
         
           /*event.preventDefault();
@@ -694,8 +689,8 @@
           }else{
             alert('asd')
           }*/
-        });
       });
+        });
 
 
 
