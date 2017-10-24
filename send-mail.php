@@ -2,6 +2,7 @@
 
 print_r($_POST);
 die();
+
 $type=$_POST['type'];
 $name=$_POST['name'];
 $email=$_POST['email'];
