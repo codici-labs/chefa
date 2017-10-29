@@ -9,7 +9,7 @@
 
   <!-- Site Properties -->
   <title>Chefnity</title>
-  
+  <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -18,10 +18,51 @@
       padding-top: 60px;
     }
 
+    .logo{
+      font-family: 'Cookie', cursive;
+      font-size: 42px;
+      color: #fff;
+    } 
+    .masthead h1.ui.header {
+        margin-top: 2em;
+        margin-bottom: 0em;
+        font-size: 4em;
+        font-weight: normal;
+    }
+    .main-logo{
+      font-family: 'Cookie', cursive!important;
+      font-size: 74px!important;
+    }
+    .subtitle{
+      font-family: Arial;
+      font-size: 20px;
+      margin-top: -36px;
+      display: block;
+    }
+    .logo-fixed{
+      font-family: 'Cookie', cursive;
+      font-size: 22px;
+      color: #fff;
+    }
     .form-style {
       font-size: 1.5em; 
     }
-
+    .ui.secondary.pointing.menu .item {
+        border-bottom-color: transparent;
+        border-bottom-style: solid;
+        border-radius: 0;
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+        padding: 10px;
+        margin: 0 0 -2px;
+        /* padding: .85714286em 1.14285714em; */
+        border-bottom-width: 2px;
+        -webkit-transition: color .1s ease;
+        transition: color .1s ease;
+    }
+    .menu-item{
+          padding-bottom: 20px!important;
+    }
     @media only screen and (max-width: 992px) {
       .ui.vertical.stripe {
         padding: 5em 0em;
@@ -48,8 +89,9 @@
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
+    <a href="#home" class="item smooth-scrolling logo-fixed">Chefinty</a>
     <a href="#home" class="active item smooth-scrolling">Home</a>
-    <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
+    <a href="#mas-ofertas" class="item smooth-scrolling">Ofertas</a>
     <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
     <a  class="item smooth-scrolling contacto">Contacto</a>
     <div class="right menu">
@@ -63,8 +105,9 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
+  <a href="#home" class="item active smooth-scrolling logo">Chefinty</a>
   <a href="#home" class="item active smooth-scrolling">Home</a>
-  <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
+  <a href="#mas-ofertas" class="item smooth-scrolling">Ofertas</a>
   <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
   <a  class="item smooth-scrolling contacto">Contacto</a>
   <a href="#register" class="item smooth-scrolling">Registrate</a>
@@ -80,10 +123,11 @@
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
-        <a href="#home" class="item active smooth-scrolling">Home</a>
-        <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
-        <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
-        <a  class="item smooth-scrolling contacto">Contacto</a>
+        <a href="#home" class="item smooth-scrolling logo">Chefinty</a>
+        <a href="#home" class="item active smooth-scrolling menu-item">Home</a>
+        <a href="#mas-ofertas" class="item smooth-scrolling menu-item">Ofertas</a>
+        <a href="#nosotros" class="item smooth-scrolling menu-item">Nosotros</a>
+        <a  class="item smooth-scrolling contacto menu-item">Contacto</a>
         <div class="right item">
           <a href="#register" class="ui inverted button">Registrate</a>
         </div>
@@ -91,9 +135,11 @@
     </div>
 
     <div class="ui text container">
-      <h1 class="ui inverted header">
-        Hay un chef cerca tuyo
+      <h1 class="ui inverted header main-logo">
+        Chefnity<br>
+        <span class="subtitle">Hay un chef cerca tuyo</span>
       </h1>
+
       <h2>¿Querés participar?</h2>
       <a href="#register"  class="item smooth-scrolling" style="text-decoration: none;">
       <div class="ui huge primary button" >Registrate<i class="right arrow icon"></i></div>
@@ -224,7 +270,7 @@
           <h3 class="ui header">¿Listo para ordenar?</h3>
           <p>Hacé click en el botón para comprar online o llamanos</p>
           <button class="ui green button">(011) 3193-0989</button>
-          <button class="ui green button">Comprar</button>
+          <a class="ui green button smooth-scrolling" href="#ofertas">Comprar</a>
         </div>
         
       </div>
@@ -385,7 +431,7 @@
     </div>
     <div class="description">
       <div class="ui header" id="compra-titulo"></div>
-        <!-- <form class="ui form" id="form-compra" method="post" action="pago.php">
+         <form class="ui form" id="form-compra" method="post" action="pago.php">
           <div class="field">
             <label>Cantidad</label>
             <input name="amount" type="number" value="1">
@@ -403,7 +449,7 @@
               <i class="checkmark icon"></i>
             </a>
           </div>
-        </form> -->
+        </form> 
     </div>
   </div>
   <div class="modal-map">
@@ -478,7 +524,7 @@
       $('.comprar-submit').click(function(){
         $('#form-compra').submit();
       });
-      $('.comprar').click(function(){
+      $('#target').on('click', '.comprar', function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
         var loc = $(this).data('location');
