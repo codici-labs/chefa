@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <!-- Standard Meta -->
@@ -18,10 +17,19 @@
       padding-top: 60px;
     }
 
+    #buy-modal .description{
+      width: 100%;
+    }
+
     .logo{
       font-family: 'Cookie', cursive;
       font-size: 42px;
       color: #fff;
+    }
+    .title-confirmar{
+      font-family: 'Cookie', cursive;
+      font-size: 26px;
+      color: #555;
     } 
     .masthead h1.ui.header {
         margin-top: 2em;
@@ -423,38 +431,70 @@
 <div class="ui modal" id="buy-modal">
   <i class="close icon"></i>
   <div class="header">
-    Confirmar compra
+
+    <div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div> 
   </div>
+  
+  
   <div class="image content"> 
     <div class="ui medium image">
       <img src="" id="compra-img">
     </div>
     <div class="description">
-      <div class="ui header" id="compra-titulo"></div>
-         <form class="ui form" id="form-compra" method="post" action="pago.php">
-          <div class="field">
-            <label>Cantidad</label>
-            <input name="amount" type="number" value="1">
+
+      <div class="ui stackable two column grid">
+          <div class="column">
+            <div class="ui header" id="compra-titulo"></div>
+               Descripcion
           </div>
-          <input type="hidden" name="price" id="price-input">
-          <input type="hidden" name="id" id="id-input">
-          <input type="hidden" name="title" id="title-input">
-          <input type="hidden" name="image" id="image-input">
-          <div class="actions">
-            <div class="ui black deny button">
-              Cancelar
+          <div class="column">
+            <div class="modal-map">
+              <div id="buymap"></div>
             </div>
-            <a href="javascript:void(0);" class="ui positive right labeled icon button comprar-submit">
-              Comprar
-              <i class="checkmark icon"></i>
-            </a>
+            
           </div>
-        </form> 
+      </div>
+
+       
     </div>
+
   </div>
-  <div class="modal-map">
-    <div id="buymap"></div>
+  <div class="actions">
+    <form class="ui form" id="form-compra" method="post" action="pago.php">
+      <div class="two fields">
+        <div class="field">
+          <label>Cantidad</label>
+          <input name="amount" type="number" value="1" min="1">
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="text" name="first-name" placeholder="First Name">
+        </div>
+
+      </div>
+      <div class="field">
+          <label>&nbsp;</label>
+          <div class="ui label large green">
+            <i class="dollar icon"></i> 125
+          </div>
+        <div class="ui black tiny deny button">
+          Cancelar
+        </div>
+        <a href="javascript:void(0);" class="ui positive  tiny  button comprar-submit">
+          Comprar
+         
+        </a>
+        </div>
+     
+      <input type="hidden" name="price" id="price-input">
+      <input type="hidden" name="id" id="id-input">
+      <input type="hidden" name="title" id="title-input">
+      <input type="hidden" name="image" id="image-input">
+     
+    </form>
+    
   </div>
+
   
 </div>
 
@@ -476,7 +516,10 @@
               <p></p>
             </div>
             <div class="extra">
-              <a class="ui default green button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
+              <div class="ui label green">
+                <i class="dollar icon"></i> {{data.precio}}
+              </div>
+              <a class="ui default tiny  button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
             </div>
           </div>
         </div>
