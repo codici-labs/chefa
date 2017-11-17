@@ -501,6 +501,7 @@
       <input type="hidden" name="id" id="id-input">
       <input type="hidden" name="title" id="title-input">
       <input type="hidden" name="image" id="image-input">
+      <input type="hidden" name="direccion" id="direccion-input">
      
     </form>
     
@@ -554,17 +555,20 @@
     {
       name: 'Location 1',
       lat: -34.5965822628378,
-      lng: -58.369031023435515
+      lng: -58.369031023435515,
+      address: 'Calle falsa 123'
     },
     {
       name: 'Location 2',
       lat: -32.59856053079477,
-      lng: -54.40653903430177
+      lng: -54.40653903430177,
+      address: 'Calle falsa 123'
     },
     {
       name: 'Location 3',
       lat: -35.5965322628378,
-      lng: -57.369034023435515
+      lng: -57.369034023435515,
+      address: 'Calle falsa 123'
     }
   ];
 
@@ -582,11 +586,13 @@
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
         var loc = $(this).data('location');
+        var direccion = locations[loc].address;
         var image = $(this).data('image');
         var id = $(this).data('id');
         $('#title-input').val(title);
         $('#price-input').val(price);
         $('#image-input').val(image);
+        $('#direccion-input').val(direccion);
         $('#id-input').val(id);
 
         $('#compra-titulo').html(title);
