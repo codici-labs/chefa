@@ -9,20 +9,18 @@ if($_POST){
 
 	////////////// inserto en tabla sales /////////////
 
-
-
 	// Create connection
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	// Check connection
 	if (!$conn) {
 	    die("Connection failed: " . mysqli_connect_error());
 	}
-
-	$sql = "INSERT INTO sales (email, amount, idFood) VALUES ('" . $_POST['compra-email'] . "', '" . $_POST['amount'] . "', '" . $_POST['id'] . "')";
+	$orderId = strval(time()) . strval(rand(0,9999));
+	$sql = "INSERT INTO sales (email, amount, price, food, address, orderID) VALUES ('" . $_POST['compra-email'] . "', '" . $_POST['amount'] . "', '" . $_POST['price'] . "', '" . $_POST['title'] . "', '" . $_POST['direccion'] . "', '" . $orderId . "')";
 
 	if (mysqli_query($conn, $sql)) {
 	    echo "New record created successfully";
-	    $externalReference = mysqli_insert_id($conn);
+	    //$externalReference = mysqli_insert_id($conn);
 	} else {
 	    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 	}
@@ -73,7 +71,7 @@ if($_POST){
 
 			)
 		),
-		"external_reference" => $externalReference
+		"external_reference" => $orderId
 	);
 
 
