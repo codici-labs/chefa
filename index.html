@@ -110,7 +110,7 @@
         <a href="http://www.twitter.com/chefnity" style="text-decoration: none; color: #000000; font-size: 20px;" title="Twitter" target="_blank"><i class="twitter icon"></i></a>
         <a href="http://www.instagram.com/chefnity" style="text-decoration: none; color: #000000; font-size: 20px;" title="Instagram" target="_blank"><i class="instagram icon"></i></a>
         <a href="https://www.youtube.com/watch?v=np72a8OWqks" style="text-decoration: none; color: #000000; font-size: 20px; padding-right: 20px;" title="YouTube" target="_blank"><i class="youtube icon"></i></a>
-      
+
         <a class="ui button smooth-scrolling" href="#register">Registrate</a>
       </div>
     </div>
@@ -444,7 +444,7 @@
   </form> -->
 </div>
 
-
+<!-- modal de compra -->
 <div class="ui modal" id="buy-modal">
   <i class="close icon"></i>
   <div class="header">
@@ -462,7 +462,8 @@
       <div class="ui stackable two column grid">
           <div class="column">
             <div class="ui header" id="compra-titulo"></div>
-               Descripcion
+            <div class="" id="compra-comentario"></div>
+               
           </div>
           <div class="column">
             <div class="modal-map">
@@ -495,26 +496,35 @@
             <i class="dollar icon"></i> 125
           </div>
         <div class="ui black tiny deny button">
-          Cancelar
+        Cancelar
         </div>
         <a href="javascript:void(0);" class="ui positive  tiny  button comprar-submit">
-          Comprar
-         
-        </a>
+        Comprar</a>
         </div>
-     
       <input type="hidden" name="price" id="price-input">
       <input type="hidden" name="id" id="id-input">
       <input type="hidden" name="title" id="title-input">
       <input type="hidden" name="image" id="image-input">
       <input type="hidden" name="direccion" id="direccion-input">
-     
-    </form>
-    
+    </form> 
   </div>
-
-  
 </div>
+
+<!-- modal de Suceso! se ha completado el pago! -->
+<div class="ui modal modal-result" data-result="success">
+  <div class="header">Felicitaciones!</div>
+  <div class="content">
+    <p>su compra ha sido confirmada!</p>
+  </div>
+</div>
+<!-- modal de error de pago -->
+<div class="ui modal modal-result" data-result="error">
+  <div class="header">Lo sentimos!</div>
+  <div class="content">
+    <p>hubo un problema, por favor intente nuevamente la operacion.</p>
+  </div>
+</div>
+
 
 
   <script id="template" type="text/template">     
@@ -528,7 +538,7 @@
             <a class="header">
             {{data.plato}}</a>
             <div class="meta">
-              <span>{{data.comentario}}</span>
+              <span> {{data.comentario}}</span>
             </div>
             <div class="description">
               <p></p>
@@ -537,7 +547,7 @@
               <div class="ui label green">
                 <i class="dollar icon"></i> {{data.precio}}
               </div>
-              <a class="ui default tiny  button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
+              <a class="ui default tiny  button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-product-comment="{{data.comentario}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="2">Comprar</a>
             </div>
           </div>
         </div>
@@ -580,8 +590,10 @@
 
   $(document).ready(function() {
 
+    $('.modal-result[data-result="' + window.location.href.split('#').pop() + '"]').modal('show');
+
         $('.contacto').click(function(){
-          console.log('aaasd');
+          
           $('#contacto-modal').modal('show');
         });
 
@@ -591,17 +603,21 @@
       $('#target').on('click', '.comprar', function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
+        var comment = $(this).data('product-comment');
         var loc = $(this).data('location');
         var direccion = locations[loc].address;
         var image = $(this).data('image');
         var id = $(this).data('id');
+        console.log(comment);
         $('#title-input').val(title);
+        $('#comment-input').val(comment);
         $('#price-input').val(price);
         $('#image-input').val(image);
         $('#direccion-input').val(direccion);
         $('#id-input').val(id);
 
         $('#compra-titulo').html(title);
+        $('#compra-comentario').html(comment);
         $('#compra-img').attr('src',image);
         $('#buy-modal').modal({
           onShow: function(){
@@ -678,6 +694,7 @@
       var template = $('#template').html();
     
       $.each(data.platosdeldia, function(k, v) {
+        
           var rendered = Mustache.render(template, {data: v});
           $('#target').append(rendered);
       });
