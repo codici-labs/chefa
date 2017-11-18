@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <style>
     .pad-reg{
-      padding-top: 60px;
+      padding-top: 0px;
     }
 
     #buy-modal .description{
@@ -88,6 +88,15 @@
       .home {
       background-position-x: 50%!important;
       }
+
+      @media only screen and (max-width: 404px) {
+        .form-label {
+          width: 100%!important;
+          padding-bottom: 5px;
+          margin: 0px!important;
+        }
+      }
+
     }
   </style>
  
@@ -333,7 +342,7 @@
         <form id="contact-form" class="ui tiny form" action="">
           <div class="column">
             <div class="inline fields ui grid container centered">
-                <label class="form-label">Registrarse como</label>
+                <label class="form-label">Registrarse como</label><br/><br/>
                 <div class="field">
                   <div class="ui radio checkbox">
                     <input id="type-chef" type="radio" value="Chef" name="type" required="required">
@@ -522,6 +531,14 @@
   <div class="header">Lo sentimos!</div>
   <div class="content">
     <p>hubo un problema, por favor intente nuevamente la operacion.</p>
+  </div>
+</div>
+
+<!-- modal de error de pago -->
+<div class="ui modal modal-result" data-result="pending">
+  <div class="header">Tu pago esta pendiente de aprobacion</div>
+  <div class="content">
+    <p>esto puede demorarse unos minutos, agradecemos su paciencia.</p>
   </div>
 </div>
 
