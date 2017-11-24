@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
 
 
 
-			header("Location: http://www.codicilabs.com/trabajos/chefnity/", true, 301);
+			header("Location: http://www.codicilabs.com/trabajos/chefnity/#success", true, 301);
 			exit();
 		}else{
 			echo "Hubo un inconveniente con el envío de mail. Contacta a un administrador.";
