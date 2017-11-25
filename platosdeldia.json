@@ -3,12 +3,12 @@
 		{
 			"id": 0, 
 			"plato": "Ravioles con salsa mixta", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Federico Pastori", 
-			"precio":"250",
+			"precio":"20",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "pastoricocina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
@@ -19,12 +19,12 @@
 		{
 			"id": 1, 
 			"plato": "Empanadas de carne", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Angel Di Maria", 
-			"precio":"250",
+			"precio":"280",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "fideitococina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
@@ -35,12 +35,12 @@
 		{
 			"id": 2, 
 			"plato": "Pizza de Mozzarella (porción)", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Enzo Perez", 
-			"precio":"250",
+			"precio":"30",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "enzococina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
@@ -51,65 +51,65 @@
 		{
 			"id": 3, 
 			"plato": "Sopa de vegetales", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Fernando Gago", 
-			"precio":"250",
+			"precio":"220",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "gagococina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -18.5933264,
+	        	"lng": -37.3970423
 	      	}
 		},
 		{
 			"id": 4, 
 			"plato": "Ensalada Caesar", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Rodrigo Palacio", 
-			"precio":"250",
+			"precio":"220",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "palaciodecocina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -94.5933264,
+	        	"lng": -78.3970423
 	      	}
 		},
 		{
 			"id": 5, 
 			"plato": "Milanesa con papa fritas", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado por tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Hector Bracamonte", 
-			"precio":"250",
+			"precio":"270",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "hectorcocina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
+	        	"lat": -54.5933264,
 	        	"lng": -58.3970423
 	      	}
 		},
 		{
 			"id": 6, 
 			"plato": "Pollo con arroz", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
+			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Jorge Da Silva", 
 			"precio":"250",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "jorgecocina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -44.5933264,
+	        	"lng": -48.3970423
 	      	}
 		},
 		{
@@ -118,14 +118,14 @@
 			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Martin Lunati", 
-			"precio":"250",
+			"precio":"50",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "martincocina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -24.5933264,
+	        	"lng": -28.3970423
 	      	}
 		},
 		{
@@ -134,14 +134,14 @@
 			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Alberto Marcico", 
-			"precio":"250",
+			"precio":"950",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "albertococina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -24.5933264,
+	        	"lng": -28.3970423
 	      	}
 		},
 		{
@@ -150,14 +150,14 @@
 			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
 			"img": "./images/articulo.jpg", 
 			"cocinero":"Silvio Rodriguez", 
-			"precio":"250",
+			"precio":"123",
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "silviococina@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -64.5933264,
+	        	"lng": -68.3970423
 	      	}
 		},
 		{
@@ -166,14 +166,16 @@
 			"comentario": "Viene en dos versiones: clasica o picante", 
 			"img": "./images/pollo-al-curry.png", 
 			"cocinero":"Nicole Neumann", 
-			"precio":"250", 
+			"precio":"125", 
 			"direccion": "juncal 1945 4a", 
-			"mail": "fedepastori@hotmail.com", 
+			"mail": "nicolecocinera@hotmail.com", 
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
+			"locations":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -34.608380,
+	        	"lng": -58.372208
+
+
 	      	}
   		}
 	]
