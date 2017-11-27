@@ -582,7 +582,7 @@
               <div class="ui label green">
                 <i class="dollar icon"></i> {{data.precio}}
               </div>
-              <a class="ui default tiny button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-product-comment="{{data.comentario}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="1" data-product-chef="{{data.cocinero}}" data-product-mail="{{data.mail}}" data-product-place="{{data.direccion}}" data-product-hour="{{data.horario}}">Comprar</a>
+              <a class="ui default tiny button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-product-comment="{{data.comentario}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="{{locationId}}" data-product-chef="{{data.cocinero}}" data-product-mail="{{data.mail}}" data-product-place="{{data.direccion}}" data-product-hour="{{data.horario}}">Comprar</a>
             </div>
           </div>
         </div>
@@ -599,31 +599,45 @@
   <script src="js/mustache.min.js"></script>
 
   <script>
-
-  var buymap;
-
-  var locations = [
-    {
-      name: 'Location 1',
-      lat: -34.5965822628378,
-      lng: -58.369031023435515,
-      address: 'Calle falsa 123'
-    },
-    {
-      name: 'Location 2',
-      lat: -32.59856053079477,
-      lng: -54.40653903430177,
-      address: 'Calle falsa 123'
-    },
-    {
-      name: 'Location 3',
-      lat: -35.5965322628378,
-      lng: -57.369034023435515,
-      address: 'Calle falsa 123'
-    }
-
-    
+  var buymap, locations = [
+    // {
+    //   name: 'Location 1',
+    //   lat: -34.5965822628378,
+    //   lng: -58.369031023435515,
+    //   address: 'Calle falsa 123'
+    // },
+    // {
+    //   name: 'Location 2',
+    //   lat: -32.59856053079477,
+    //   lng: -54.40653903430177,
+    //   address: 'Calle falsa 123'
+    // },
+    // {
+    //   name: 'Location 3',
+    //   lat: -35.5965322628378,
+    //   lng: -57.369034023435515,
+    //   address: 'Calle falsa 123'
+    // }    
   ];
+  
+  $.getJSON('./platosdeldia.json', {}, function(data) {
+      var template = $('#template').html();
+
+      $.each(data.platosdeldia, function(k, v) {
+          
+          locations[k] = {
+            name: v.cocinero,
+            lat: v.location.lat,
+            lng: v.location.lng,
+            address: v.direccion
+          };
+        
+          var rendered = Mustache.render(template, {data: v, locationId : k});
+          $('#target').append(rendered);
+      });
+
+    });
+  
 
   $(document).ready(function() {
       //funcion para abrir el modal  #success #error #pending
@@ -740,16 +754,7 @@
       $('.ui.sidebar').sidebar('attach events', '.toc.item');
     });
 
-    $.getJSON('./platosdeldia.json', {}, function(data) {
-      var template = $('#template').html();
     
-      $.each(data.platosdeldia, function(k, v) {
-        
-          var rendered = Mustache.render(template, {data: v});
-          $('#target').append(rendered);
-      });
-
-    });
 
   
   </script>
