@@ -158,7 +158,7 @@
           <a href="http://www.instagram.com/chefnity" style="text-decoration: none; color: #ffffff; font-size: 20px;" title="Instagram" target="_blank"><i class="instagram icon"></i></a>
            <a href="https://www.youtube.com/watch?v=np72a8OWqks" style="text-decoration: none; color: #ffffff; font-size: 20px;" title="YouTube" target="_blank"><i class="youtube icon"></i></a>
          
-          <a href="#register"  class="ui inverted button" style="padding-top: 10px;">Registrate</a>
+          <a href="#register"  class="ui inverted button smooth-scrolling" style="padding-top: 10px;">Registrate</a>
         </div>
       </div>
     </div>
@@ -369,7 +369,7 @@
               </div>
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">Teléfono</label>
-                <input class="ui blue basic label" type="text" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+                <input class="ui blue basic label" type="number" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
               </div>
             </div>
             <div class="column">
@@ -558,7 +558,12 @@
   </div>
 </div>
 
-
+<div class="ui modal contact-confirm">
+  <div class="header">Nos estaremos comunicando contigo</div>
+  <div class="content">
+    <p>Muchas gracias por dejarnos tus datos. Nos estaremos comunicando para que empieces a formar parte de esta comunidad</p>
+  </div>
+</div>
 
   <script id="template" type="text/template">     
     <div class="column">
@@ -834,13 +839,17 @@
         $('.errors').show();
       } else {
         $('.errors').hide();
-        console.log('tuwice');
         $.ajax({
           url: 'send-mail.php',
           type: 'POST',
           data: { type: $('input[name="type"]').val(), phone: $('input[name="phone"]').val(), message: $('textarea[name="message"]').val(), name: $('input[name="name"]').val(), email: $('input[name="email"]').val() },
           success: function(){
-            $('.modal').modal('show');
+            $('.contact-confirm').modal("show", function () {
+                window.setTimeout(function () {
+                    $(".contact-confirm").modal("hide");
+                     location.reload(window.scrollTo(0, 0)); 
+                }, 3000);                 
+            });
           }
         });
       }
