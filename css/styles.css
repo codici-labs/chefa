@@ -154,4 +154,78 @@ form.form .form-label {
 form.form textarea {
   height: 13.7em !important; }
 
+.pad-reg {
+  padding-top: 0px; }
+
+#buy-modal .description {
+  width: 100%; }
+
+.logo {
+  font-family: 'Cookie', cursive;
+  font-size: 42px;
+  color: #fff; }
+
+.title-confirmar {
+  font-family: 'Cookie', cursive;
+  font-size: 26px;
+  color: #555; }
+
+.masthead h1.ui.header {
+  margin-top: 2em;
+  margin-bottom: 0em;
+  font-size: 4em;
+  font-weight: normal; }
+
+.main-logo {
+  font-family: "Cookie", cursive !important;
+  font-size: 74px !important; }
+
+.subtitle {
+  font-family: Arial;
+  font-size: 20px;
+  margin-top: -36px;
+  display: block; }
+
+.logo-fixed {
+  font-family: 'Cookie', cursive;
+  font-size: 22px;
+  color: #fff; }
+
+.form-style {
+  font-size: 1.5em; }
+
+.ui.secondary.pointing.menu .item {
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-radius: 0;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  padding: 10px;
+  margin: 0 0 -2px;
+  /* padding: .85714286em 1.14285714em; */
+  border-bottom-width: 2px;
+  -webkit-transition: color .1s ease;
+  transition: color .1s ease; }
+
+.menu-item {
+  padding-bottom: 20px !important; }
+
+@media only screen and (max-width: 992px) {
+  .ui.vertical.stripe {
+    padding: 5em 0em; } }
+@media only screen and (max-width: 767px) {
+  .ui.vertical.stripe {
+    padding: 1em 0em; }
+
+  #ofertas {
+    padding-top: 50px; }
+
+  .home {
+    background-position-x: 50% !important; } }
+@media only screen and (max-width: 767px) and (max-width: 404px) {
+  .form-label {
+    width: 100% !important;
+    padding-bottom: 5px;
+    margin: 0px !important; } }
+
 /*# sourceMappingURL=styles.css.map */

@@ -12,8 +12,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -34.5844583,
+	        	"lng": -58.4230539
 	      	}
 		},
 		{
@@ -28,8 +28,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": 52.5186,
-	        	"lng": 13.4081
+	        	"lat": -34.5844583,
+	        	"lng": -58.4230539
 	      	}
 		},
 		{
@@ -44,8 +44,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -34.5844583,
+	        	"lng": -58.4230539
 	      	}
 		},
 		{
@@ -60,8 +60,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -18.5933264,
-	        	"lng": -37.3970423
+	        	"lat": -34.5978837,
+	        	"lng": -58.4422514
 	      	}
 		},
 		{
@@ -76,8 +76,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -94.5933264,
-	        	"lng": -78.3970423
+	        	"lat": -34.620545,
+	        	"lng": -58.4504936
 	      	}
 		},
 		{
@@ -92,8 +92,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -54.5933264,
-	        	"lng": -58.3970423
+	        	"lat": -34.6340477,
+	        	"lng": -58.4716685
 	      	}
 		},
 		{
@@ -108,8 +108,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -44.5933264,
-	        	"lng": -48.3970423
+	        	"lat": -34.6340477,
+	        	"lng": -58.4716685
 	      	}
 		},
 		{
@@ -124,8 +124,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -24.5933264,
-	        	"lng": -28.3970423
+	        	"lat": -34.62525,
+	        	"lng": -58.4951703
 	      	}
 		},
 		{
@@ -140,8 +140,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -24.5933264,
-	        	"lng": -28.3970423
+	        	"lat": -34.5714374,
+	        	"lng": -58.4980609
 	      	}
 		},
 		{
@@ -156,8 +156,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -64.5933264,
-	        	"lng": -68.3970423
+	        	"lat": -34.6195496,
+	        	"lng": -58.4018413
 	      	}
 		},
 		{
@@ -172,8 +172,8 @@
 			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
 			"location":
 	      	{
-	        	"lat": -34.608380,
-	        	"lng": -58.372208
+	        	"lat": -34.6215723,
+	        	"lng": -58.392859
 
 	      	}
   		}

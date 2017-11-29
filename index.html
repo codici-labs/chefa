@@ -12,93 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <style>
-    .pad-reg{
-      padding-top: 0px;
-    }
-
-    #buy-modal .description{
-      width: 100%;
-    }
-
-    .logo{
-      font-family: 'Cookie', cursive;
-      font-size: 42px;
-      color: #fff;
-    }
-    .title-confirmar{
-      font-family: 'Cookie', cursive;
-      font-size: 26px;
-      color: #555;
-    } 
-    .masthead h1.ui.header {
-        margin-top: 2em;
-        margin-bottom: 0em;
-        font-size: 4em;
-        font-weight: normal;
-    }
-    .main-logo{
-      font-family: 'Cookie', cursive!important;
-      font-size: 74px!important;
-    }
-    .subtitle{
-      font-family: Arial;
-      font-size: 20px;
-      margin-top: -36px;
-      display: block;
-    }
-    .logo-fixed{
-      font-family: 'Cookie', cursive;
-      font-size: 22px;
-      color: #fff;
-    }
-    .form-style {
-      font-size: 1.5em; 
-    }
-    .ui.secondary.pointing.menu .item {
-        border-bottom-color: transparent;
-        border-bottom-style: solid;
-        border-radius: 0;
-        -ms-flex-item-align: end;
-        align-self: flex-end;
-        padding: 10px;
-        margin: 0 0 -2px;
-        /* padding: .85714286em 1.14285714em; */
-        border-bottom-width: 2px;
-        -webkit-transition: color .1s ease;
-        transition: color .1s ease;
-    }
-    .menu-item{
-          padding-bottom: 20px!important;
-    }
-    @media only screen and (max-width: 992px) {
-      .ui.vertical.stripe {
-        padding: 5em 0em;
-      }
-    }
-    
-    @media only screen and (max-width: 767px) {
-      .ui.vertical.stripe {
-        padding: 1em 0em;
-      }
-      #ofertas {
-        padding-top: 50px;
-      }
-
-      .home {
-      background-position-x: 50%!important;
-      }
-
-      @media only screen and (max-width: 404px) {
-        .form-label {
-          width: 100%!important;
-          padding-bottom: 5px;
-          margin: 0px!important;
-        }
-      }
-
-    }
-  </style>
+ 
  
 </head>
 <body>
@@ -393,25 +307,10 @@
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">Nosotros</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Sitemap</a>
-            <a href="#" class="item">Contacto</a>
-           
-          </div>
-        </div>
-        <div class="three wide column">
-          <h4 class="ui inverted header">Servicios</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Servicio 1</a>
-            <a href="#" class="item">Servicio 2</a>
-            <a href="#" class="item">Servicio 3</a>
-            <a href="#" class="item">Servicio 4</a>
-          </div>
-        </div>
+       
+       
         <div class="seven wide column">
-          <h4 class="ui inverted header">Chefnity 2017</h4>
+          <h4 class="ui inverted header">Nosotros</h4>
           <p>Somos un grupo de emprendedores amantes de la cocina y las relaciones. Nos gusta cocinar, pero mucho más nos gusta compartir nuestras creaciones con el mundo.</p>
           <p>Podés conocer más acerca de nosotros en nuestro blog o siguiéndonos en nuestras redes sociales.</p>
 
@@ -531,31 +430,36 @@
 
 <!-- modal de Suceso! se ha completado el pago! -->
 <div class="ui modal modal-result" data-result="success">
-  <div class="header">Compra confirmada</div>
+  <div class="header"><div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div></div>
   <div class="content">
+    <h4>Compra confirmada</h4>
     <p>Le enviaremos un email con la información detallada para retirar el pedido.</p>
     <p>Muchas gracias</p>
   </div>
 </div>
 <!-- modal de error de pago -->
 <div class="ui modal modal-result" data-result="error">
-  <div class="header">Lo sentimos</div>
+  <div class="header"><div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div></div>
   <div class="content">
+    <h4>Lo sentimos</h4>
     <p>Hubo un problema, por favor intente nuevamente la operación.</p>
   </div>
 </div>
 
 <!-- modal de error de pago -->
 <div class="ui modal modal-result" data-result="pending">
-  <div class="header">Tu pago esta pendiente de aprobacion</div>
+  <div class="header"><div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div></div>
+
   <div class="content">
+    <h4>Tu pago esta pendiente de aprobacion</h4>
     <p>Esto puede demorarse unos minutos, agradecemos su paciencia.</p>
   </div>
 </div>
 
 <div class="ui modal contact-confirm">
-  <div class="header">Nos estaremos comunicando contigo</div>
+  <div class="header"><div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div></div>
   <div class="content">
+    <h4>Nos estaremos comunicando contigo</h4>
     <p>Muchas gracias por dejarnos tus datos. Nos estaremos comunicando para que empieces a formar parte de esta comunidad</p>
   </div>
 </div>
@@ -643,12 +547,11 @@
   }
   $(document).ready(function() {
       //funcion para abrir el modal  #success #error #pending
-    $('.modal-result[data-result="' + window.location.href.split('#').pop() + '"]').modal('show');
+      $('.modal-result[data-result="' + window.location.href.split('#').pop() + '"]').modal('show');
 
-        $('.contacto').click(function(){
-          
-          $('#contacto-modal').modal('show');
-        });
+      $('.contacto').click(function(){
+        $('#contacto-modal').modal('show');
+      });
 
       $('.comprar-submit').click(function(){
         var email = $('#email-comprador').val();
@@ -860,60 +763,6 @@
       }
       return false;
     })
-  $(document).ready(function(){
-
-
-      //  $('.send').click(function(e){
-
-      //    if($("form")[0].checkValidity()) {
-      //      e.preventDefault();
-      //      $.ajax({
-          //   url: 'send-mail.php',
-          //   method: 'post',
-          //   data: {name: $('#name').val(), phone: $('#phone').val(), message: $('#message').val(), nameInst: $('#nameInst').val(), email: $('#email').val(),  },
-          //   success: function(){
-          //    $('.modal').modal();
-          //   }
-          // });
-      //    }
-      //  });
-        
-        // $('#contact-form button').on('click',function(event){
-        //   if($('input[name="type"]').val() == '' || $('input[name="name"]').val() == '' || $('input[name="email"]').val() == '' || $('input[name="phone"]').val() == '' || $('textarea[name="message"] ').val() == '') {
-        //     $('.errors').show();
-        //     return false;
-        //   } else {
-        //     $('.errors').hide();
-            
-        //     $.ajax({
-        //       url: 'send-mail.php',
-        //       method: 'post',
-        //       data: { type: $('input[name="type"]').val(), phone: $('input[name="phone"]').val(), message: $('textarea[name="message"]').val(), name: $('input[name="name"]').val(), email: $('input[name="email"]').val() },
-        //       success: function(){
-        //         $('.modal').modal();
-        //       }
-        //     });
-        //     return false;
-        //   }
-          
-        
-          /*event.preventDefault();
-          if($("form")[0].checkValidity()) {
-            $.ajax({
-            url: 'send-mail.php',
-            method: 'post',
-            data: {name: $('#name').val(), phone: $('#phone').val(), message: $('#message').val(), nameInst: $('#nameInst').val(), email: $('#email').val(),  },
-            success: function(){
-              $('.modal').modal();
-            }
-          });
-          }else{
-            alert('asd')
-          }*/
-      // });
-        });
-
-
 
   </script>
   <script async defer
