@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
 		$mail->SMTPSecure = "ssl";
 		$mail->Host = "smtp.zoho.com"; // SMTP a utilizar. Por ej. smtp.elserver.com
 		$mail->Username = "test@codicilabs.com"; // Correo completo a utilizar
-		$mail->Password = "clavemail"; // Contraseña
+		$mail->Password = "c0dicilabs2017"; // Contraseña
 		$mail->Port = 465; // Puerto a utilizar
 
 		//Con estas pocas líneas iniciamos una conexión con el SMTP. Lo que ahora deberíamos hacer, es configurar el mensaje a enviar, el //From, etc.
@@ -38,11 +38,17 @@ if ($result->num_rows > 0) {
 		$mail->AddAddress($row["email"]); // Esta es la dirección a donde enviamos
 		$mail->IsHTML(true); // El correo se envía como HTML
 		$mail->Subject = "Tu compra en Chefnity"; // Este es el titulo del email.
-		$body = "Hola. Esto es un recibo de tu compra en chefnity.<br />";
+		/*$body = "Hola. Esto es un recibo de tu compra en chefnity.<br />";
 		$body .= "Tu nro de orden es: " . $row["id"] . "<br />";
 		$body .= "Compraste <strong>" . $row["amount"] . "</strong> del plato: <strong>" . $row["food"] . "</strong><br />";
 		$body .= "Pagaste <strong>$" . $row["price"] . "</strong> por cada plato. Un total de <strong>$" . ($row["price"]*$row["amount"]) . "</strong><br />";
-		$body .= "Tenes que ir a retirarlo a <strong>" . $row["address"] . "</strong>.";
+		$body .= "Tenes que ir a retirarlo a <strong>" . $row["address"] . "</strong>.";*/
+
+		$body = file_get_contents('./mailing/confirmacion/index.html');
+		$body = str_replace("!*NOMBRE*!", $row["email"], $body);
+		$body = str_replace("!*CANTIDAD*!", $row["amount"], $body);
+		$body = str_replace("!*PRODUCTO*!", $row["food"], $body);
+		$body = str_replace("!*DIRECCION*!", $row["address"], $body);
 		$mail->Body = $body; // Mensaje a enviar
 		$exito = $mail->Send(); // Envía el correo.
 
