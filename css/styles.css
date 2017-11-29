@@ -117,8 +117,12 @@
   position: relative;
   overflow: hidden;
   display: block;
-  height: 166px;
+  height: 400px;
   width: 100%; }
+
+#error-compra {
+  padding-top: 10px;
+  color: #f2711c; }
 
 #ofertas {
   padding-top: 70px;
@@ -127,10 +131,6 @@
 #contacto {
   padding-top: 70px;
   outline: none; }
-
-#register:focus {
-  outline: none;
-}
 
 .ui.large.menu {
   font-size: 1.1em; }

@@ -153,8 +153,13 @@ display: none;
     position: relative;
     overflow: hidden;
     display: block;
-    height: 166px;
+    height: 400px;
     width: 100%;
+}
+
+#error-compra{
+  padding-top: 10px;
+  color:#f2711c;
 }
 
 #ofertas {
