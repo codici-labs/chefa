@@ -531,16 +531,17 @@
 
 <!-- modal de Suceso! se ha completado el pago! -->
 <div class="ui modal modal-result" data-result="success">
-  <div class="header">Felicitaciones!</div>
+  <div class="header">Compra confirmada</div>
   <div class="content">
-    <p>Su compra ha sido confirmada!</p>
+    <p>Le enviaremos un email con la información detallada para retirar el pedido.</p>
+    <p>Muchas gracias</p>
   </div>
 </div>
 <!-- modal de error de pago -->
 <div class="ui modal modal-result" data-result="error">
-  <div class="header">Lo sentimos!</div>
+  <div class="header">Lo sentimos</div>
   <div class="content">
-    <p>Hubo un problema, por favor intente nuevamente la operacion.</p>
+    <p>Hubo un problema, por favor intente nuevamente la operación.</p>
   </div>
 </div>
 
@@ -567,10 +568,9 @@
             <img src={{data.img}}>
           </div>
           <div class="content">
-            <a class="header">
-            {{data.plato}}</a>
+            <div class="header">{{data.plato}}</div>
 
-            <span style="font-size: 11px;">&nbsp;<a title="{{data.mail}}" href="mailto:{{data.mail}}">{{data.cocinero}}</a></span>
+            <div class="cocinero">{{data.cocinero}}</div>
             <div class="meta">
               <span> {{data.comentario}}</span>
             </div>
