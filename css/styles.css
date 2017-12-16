@@ -1,4 +1,10 @@
 /*Main colors*/
+.pcdc
+{
+  color: #666;
+  font-size: 11px;
+  padding-top: 20px;
+}
 .hidden.menu {
   display: none; }
 
