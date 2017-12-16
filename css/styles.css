@@ -101,7 +101,7 @@
 .testimonials {
   margin: 80px 0 50px 0 !important; }
   .testimonials .column {
-    text-align: center; }
+    text-align: left; }
   .testimonials .image {
     margin: auto;
     margin-bottom: 25px; }
@@ -132,6 +132,12 @@
 #ofertas {
   padding-top: 70px;
   outline: none; }
+  #ofertas .extra .price {
+    display: inline-block;
+    color: #21ba45;
+    font-weight: bold; }
+    #ofertas .extra .price i.dollar {
+      margin: 0; }
 
 #contacto {
   padding-top: 70px;
@@ -158,6 +164,37 @@ form.form .form-label {
   font-size: 15px !important; }
 form.form textarea {
   height: 13.7em !important; }
+
+.ui-button {
+  border: 1px solid #e8e8e8 !important;
+  background: #e8e8e8 !important; }
+
+input[name="amount"] {
+  width: 100% !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important; }
+
+.spinner {
+  width: 100%;
+  padding-right: 15px !important; }
+
+.ui-spinner {
+  width: 100%;
+  border: none !important; }
+
+#form-compra div.tag {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 19px;
+  margin-right: 10px; }
+#form-compra .modal-buttons {
+  margin-top: 22px !important; }
+
+.item .image {
+  width: 175px; }
+  .item .image .ribbon {
+    font-size: 14px;
+    font-weight: bold; }
 
 .pad-reg {
   padding-top: 0px; }

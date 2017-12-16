@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
  
   <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuA4fr6b0amjoCHPnO8DkHPkwAqi_xUs&callback=initMap"></script>
@@ -20,11 +21,11 @@
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
-    <a href="#home" class="item smooth-scrolling logo-fixed">Chefinty</a>
+    <a href="#home" class="item smooth-scrolling logo-fixed">Chefnity</a>
     <a href="#home" class="active item smooth-scrolling">Home</a>
     <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
     <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
-    <a href="" class="item smooth-scrolling contacto">Contacto</a>
+    <a class="item smooth-scrolling contacto">Contacto</a>
     <div class="right menu">
      
       <div class="item">
@@ -42,7 +43,7 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-  <a href="#home" class="item active smooth-scrolling logo">Chefinty</a>
+  <a href="#home" class="item active smooth-scrolling logo">Chefnity</a>
   <a href="#home" class="item active smooth-scrolling">Home</a>
   <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
   <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
@@ -60,7 +61,7 @@
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
-        <a href="#home" class="item smooth-scrolling logo">Chefinty</a>
+        <a href="#home" class="item smooth-scrolling logo">Chefnity</a>
         <a href="#home" class="item active smooth-scrolling menu-item">Home</a>
         <a href="#ofertas" class="item smooth-scrolling menu-item">Ofertas</a>
         <a href="#nosotros" class="item smooth-scrolling menu-item">Nosotros</a>
@@ -254,19 +255,19 @@
     <div id="register" class="ui container testimonials pad-reg">
       <h3 class="ui header">Registrate</h3>
       
-        <form id="contact-form" class="ui tiny form" action="">
+        <form class="ui tiny form send-mail-form" action=""><!-- id="contact-form" -->
           <div class="column">
             <div class="inline fields ui grid container centered">
                 <label class="form-label">Registrarse como</label><br/><br/>
                 <div class="field">
                   <div class="ui radio checkbox">
-                    <input id="type-chef" type="radio" value="Chef" name="type" required="required">
+                    <input id="type-chef" type="radio" value="chef" name="type" required="required">
                     <label for="type-chef">Chef</label>
                   </div>
                 </div>
               <div class="field">
                 <div class="ui radio checkbox">
-                  <input id ="type-buyer" type="radio"  value="Comprador" name="type">
+                  <input id ="type-buyer" type="radio"  value="comprador" name="type">
                   <label for="type-buyer">Comprador</label>
                 </div>
               </div>
@@ -284,7 +285,7 @@
               </div>
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">Teléfono</label>
-                <input class="ui blue basic label" type="number" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+                <input class="ui blue basic label" type="number" name="phone" placeholder="Tu teléfono (números únicamente)" required title="Por favor ingrese su telefono">
               </div>
             </div>
             <div class="column">
@@ -295,6 +296,7 @@
             </div>
           </div><br />
           <div class="ui center aligned" align="center">
+            <input type="hidden" name="form" value="registration">
             <input type="submit" class="ui big blue button" value="Enviar">
             <!-- <button class="ui big blue button">Enviar</button> -->
           </div>
@@ -326,12 +328,13 @@
 </div>
 
 <div class="ui modal" id="contacto-modal">
-  <div class="header">¡Nos interesa saber tu opinión!</div>
+    <div class="header">¡Nos interesa saber tu opinión!</div>
     <div class="content">
+    <form class="ui tiny form send-mail-form" action="">
       <div class="ui large form">
         <div class="field">
           <label style="padding-bottom: 10px;">Nombre</label>
-          <input type="text" name="nombre" placeholder="Tu nombre" required title="Por favor ingrese su nombre">
+          <input type="text" name="name" placeholder="Tu nombre" required title="Por favor ingrese su nombre">
         </div>
         <div class="field">
           <label  style="padding-bottom: 10px;">E-mail</label>
@@ -339,22 +342,24 @@
         </div>
         <div class="field">
           <label  style="padding-bottom: 10px;">Teléfono</label>
-          <input type="text" name="telefono" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+          <input type="text" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
         </div>
         <div class="field">
           <label  style="padding-bottom: 10px;">Comentario</label>
-          <textarea name="comentario" required title="Por favor deje un comentario!"></textarea>
+          <textarea name="message" required title="Por favor deje un comentario!"></textarea>
         </div>
-        <div class="ui center aligned " align="right"> 
+        <div class="ui center aligned " align="right">
+          <input type="hidden" name="form" value="contact">
           <input type="submit" class="ui big blue button " value="Enviar">
         </div>
       </div>        
+    </form>
     </div>
 </div>
 
 <!-- modal de compra -->
 <div class="ui modal" id="buy-modal">
-  <i class="close icon"></i>
+  <!-- <i class="close icon"></i> -->
   <div class="header">
 
     <div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div> 
@@ -397,26 +402,37 @@
     <form class="ui form" id="form-compra" method="post" action="pago.php">
       <div class="two fields">
         <div class="field">
-          <label>Cantidad</label>
-          <input name="amount" type="number" value="1" min="1" id="cantidad">
+            <div class="ui labeled input large"> 
+              <div class="ui label">
+                Email
+              </div>
+              <input type="text" name="compra-email" id="email-comprador">
+              <div id="error-compra"></div>              
+            </div>
         </div>
         <div class="field">
-            <label>Email</label>
-            <input type="text" name="compra-email" id="email-comprador">
-            <div id="error-compra"></div>
+          <div class="ui labeled input large"> 
+            <div class="ui label">
+              Cantidad
+            </div>
+            <input name="amount" data-price class="spinner" value="1" min="1" id="cantidad">
+          </div>
         </div>
-
+        <div class="ui green tag label">
+          <span>$</span>&nbsp;<span class="" id="compra-precio"></span>
+        </div>
       </div>
-      <div class="field">
-          <label>&nbsp;</label>
-          <div class="ui label large green">
+      <div class="field modal-buttons">
+          <!-- <label>&nbsp;</label> -->
+          <!-- <div class="ui label large green">
             <i class="dollar icon" ></i> <div style="display: inline-block;" class="" id="compra-precio"></div>
-          </div> 
-        <div class="ui black tiny deny button">
-        Cancelar
+          </div> --> 
+        <div class="ui  small deny right labeled icon button">
+        Cancelar <i class="remove icon"></i>
         </div>
-        <a href="javascript:void(0);" class="ui positive  tiny  button comprar-submit" >
-        Comprar</a>
+        <a href="javascript:void(0);" class="ui positive small right labeled icon button comprar-submit" >
+          Comprar <i class="checkmark icon"></i>
+        </a>
         </div>
       <input type="hidden" name="price" id="price-input">
       <input type="hidden" name="id" id="id-input">
@@ -459,7 +475,7 @@
   <div class="header"><div class="title-confirmar"> <img src="images/icon.png" width="20"> Chefnity</div></div>
   <div class="content">
     <h4>Nos estaremos comunicando contigo</h4>
-    <p>Muchas gracias por dejarnos tus datos. Nos estaremos comunicando para que empieces a formar parte de esta comunidad</p>
+    <p id="response-message"></p>
   </div>
 </div>
 
@@ -467,9 +483,15 @@
     <div class="column">
       <div class="ui items">
         <div class="item">
-          <div class="image">
-            <img src={{data.img}}>
+          <div class="ui image">
+            <div class="ui green ribbon label">
+              <i class="dollar icon"></i> {{data.precio}}
+            </div>
+            <img src="{{data.img}}">
           </div>
+          <!-- <div class="image">
+            <img src={{data.img}}>
+          </div> -->
           <div class="content">
             <div class="header">{{data.plato}}</div>
 
@@ -481,10 +503,10 @@
               <p></p>
             </div>
             <div class="extra">
-              <div class="ui label green">
+              <!-- <div class="ui price">
                 <i class="dollar icon"></i> {{data.precio}}
-              </div>
-              <a class="ui default tiny button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-product-comment="{{data.comentario}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="{{locationId}}" data-product-chef="{{data.cocinero}}" data-product-mail="{{data.mail}}" data-product-place="{{data.direccion}}" data-product-hour="{{data.horario}}">Comprar</a>
+              </div> -->
+              <a class="ui default small button comprar" href="javascript:void(0);" data-product-title="{{data.plato}}" data-product-price="{{data.precio}}" data-product-comment="{{data.comentario}}" data-image="{{data.img}}" data-id="{{data.id}}" data-location="{{locationId}}" data-product-chef="{{data.cocinero}}" data-product-mail="{{data.mail}}" data-product-place="{{data.direccion}}" data-product-hour="{{data.horario}}">Comprar</a>
             </div>
           </div>
         </div>
@@ -552,6 +574,19 @@
         $('#contacto-modal').modal('show');
       });
 
+      $('input[name="amount"]').on('change',function(){
+        var price = $(this).data('price') * $(this).val();
+        $('#compra-precio').text(price);
+        // console.log(price);
+
+        // console.log($(this).val());
+      })
+
+      var spinner = $( ".spinner" ).spinner();
+      $('.ui-spinner-button').click(function() {
+         $(this).siblings('input').change();
+      });
+
       $('.comprar-submit').click(function(){
         var email = $('#email-comprador').val();
         if(!validateEmail(email)){
@@ -592,6 +627,7 @@
         $('#compra-mail').html(mail);
         $('#compra-cocinero').html(chef);
         $('#compra-precio').html(price);
+        $('input[name="amount"]').data('price',price).val(1);
         $('#compra-titulo').html(title);
         $('#compra-comentario').html(comment);
         $('#compra-img').attr('src',image);
@@ -694,8 +730,8 @@
     google.maps.event.addDomListener(document.getElementById("buscar-cocinero"), 'click', function( event ) {
       navigator.geolocation.getCurrentPosition(function(pos) {
 
-         var lat = pos.coords.latitude;
-         var lng = pos.coords.longitude;
+        var lat = pos.coords.latitude;
+        var lng = pos.coords.longitude;
       
         
         var R = 6371;
@@ -734,33 +770,48 @@
     }
   }
 
-    $('#contact-form').submit(function(event){
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      if($('input[name="type"]').val() == '' || $('input[name="name"]').val() == '' || $('input[name="email"]').val() == '' || $('input[name="phone"]').val() == '' || $('textarea[name="message"] ').val() == '') {
-        $('.errors').show();
-      } else {
-        $('.errors').hide();
-        $.ajax({
-          url: 'send-mail.php',
-          type: 'POST',
-          data: { type: $('input[name="type"]').val(), phone: $('input[name="phone"]').val(), message: $('textarea[name="message"]').val(), name: $('input[name="name"]').val(), email: $('input[name="email"]').val() },
-          success: function(){
-            $('.contact-confirm').modal("show", function () {
-                window.setTimeout(function () {
-                    $(".contact-confirm").modal("hide");
-                     location.reload(window.scrollTo(0, 0)); 
-                }, 3000);                 
-            });
-          }
-        });
+
+
+    $('.send-mail-form').submit(function(event){
+      event.preventDefault();      
+      var fields = $(this).find('input,textarea');
+
+      var data = {};
+      for(var i = 0; i < fields.length; i++){
+        if($(fields[i]).attr('name') !== undefined){
+          data[$(fields[i]).attr('name')] = $(fields[i]).val();
+        }
       }
+
+      var messages = {
+        'contact': 'En breve nos estaremos comunicando para que empieces a formar parte de esta comunidad.',
+        'registration': 'Muchas gracias por registrarte. Nos estaremos comunicando para que empieces a formar parte de esta comunidad.',
+        'error': 'Error en el envio del mail.'
+      
+      };
+      contact = '';
+      var contact = '';
+      
+      $.ajax({
+        url: 'send-mail.php',
+        type: 'POST',
+        data: data,
+        success: function(response){
+          $('.contact-confirm').find('#response-message').html(messages[response]);
+
+          $('.contact-confirm').modal("show", function () {
+            window.setTimeout(function () {
+              $(".contact-confirm").modal("hide");
+            }, 4000);                 
+          });
+        }
+      });
       return false;
-    })
+    });
 
     $(document).on('click','#target .image',function (){ $(this).parent().find('a.comprar').click() });
   </script>
-
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,17 @@
+- Marcar seccion en el navbar a medida que vas scroleando
+- Sacar subrayado del navbar
+- Instagram te lleva a la vieja página de Chefnity?
+- modal small
+
+
+-----------
+- Lo que necesitamos en el mail es el teléfono del vendedor y el mail.
+- Lo mismo en el caso del mail que recibe el cocinero: datos del comprador para que se comunique
+
+- Me registre como chef y como comprador pero no recibí nada y no se a donde llegan esos mails. Usa info@chefnity.com para todo
+
+- No dice cuándo podes buscar el pedido en el mail ni hay teléfono de contacto en el mail de compra
+
+- El nombre del mail dice Chefnity Test Codiciaba
+
+- en “nosotros” no hay ninguna sección
