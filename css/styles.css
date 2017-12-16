@@ -59,7 +59,7 @@
 .secondary.pointing.menu .toc.item {
   display: none; }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 991px) {
   .ui.fixed.menu {
     display: none !important; }
 
@@ -115,6 +115,10 @@
   .testimonials#register {
     margin-top: 0px !important;
     margin-bottom: 150px !important;
+    padding-top: 50px !important;
+    outline: none; }
+  .testimonials#opinions {
+    margin-top: 0px !important;
     padding-top: 50px !important;
     outline: none; }
 
@@ -187,6 +191,9 @@ input[name="amount"] {
   padding-bottom: 10px;
   font-size: 19px;
   margin-right: 10px; }
+#form-compra .tagged {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
 #form-compra .modal-buttons {
   margin-top: 22px !important; }
 
@@ -269,5 +276,7 @@ input[name="amount"] {
     width: 100% !important;
     padding-bottom: 5px;
     margin: 0px !important; } }
+.ui.secondary.inverted.pointing.menu .item {
+  border: none !important; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -72,7 +72,7 @@ padding: 5em 0em;
 display: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 991px) {
   .ui.fixed.menu {
     display: none !important;
   }
@@ -154,6 +154,12 @@ display: none;
     padding-top: 50px!important;
     outline: none;
   }
+
+  &#opinions{
+    margin-top:0px!important;
+    padding-top: 50px!important;
+    outline: none;
+  }
 }
 
 #map{
@@ -185,6 +191,8 @@ display: none;
     }
   }
 }
+
+
 
 #contacto {
   padding-top: 70px;
@@ -256,6 +264,14 @@ input[name="amount"]{
     font-size: 19px;
     margin-right: 10px;
     // margin-bottom: 3px;
+  }
+  .tagged{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; 
+  }
+
+  .two.fields>.field{
+    // width: 50%!important;
   }
 
   .modal-buttons{
@@ -359,3 +375,9 @@ input[name="amount"]{
       }
 
     }
+
+.ui.secondary.inverted.pointing.menu {
+  .item{
+    border: none!important;
+  }
+}

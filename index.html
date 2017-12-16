@@ -24,7 +24,8 @@
     <a href="#home" class="item smooth-scrolling logo-fixed">Chefnity</a>
     <a href="#home" class="active item smooth-scrolling">Home</a>
     <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
-    <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
+    <a href="#nosotros" class="item smooth-scrolling menu-item">¿Dónde comprar?</a>
+    <a href="#opinions" class="item smooth-scrolling menu-item">Más</a>
     <a class="item smooth-scrolling contacto">Contacto</a>
     <div class="right menu">
      
@@ -43,10 +44,11 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-  <a href="#home" class="item active smooth-scrolling logo">Chefnity</a>
+  <a href="#home" class="item smooth-scrolling logo">Chefnity</a>
   <a href="#home" class="item active smooth-scrolling">Home</a>
   <a href="#ofertas" class="item smooth-scrolling">Ofertas</a>
-  <a href="#nosotros" class="item smooth-scrolling">Nosotros</a>
+  <a href="#nosotros" class="item smooth-scrolling menu-item">¿Dónde comprar?</a>
+  <a href="#opinions" class="item smooth-scrolling menu-item">Más</a>
   <a  class="item smooth-scrolling contacto">Contacto</a>
   <a href="#register" class="item smooth-scrolling">Registrate</a>
 </div>
@@ -64,7 +66,8 @@
         <a href="#home" class="item smooth-scrolling logo">Chefnity</a>
         <a href="#home" class="item active smooth-scrolling menu-item">Home</a>
         <a href="#ofertas" class="item smooth-scrolling menu-item">Ofertas</a>
-        <a href="#nosotros" class="item smooth-scrolling menu-item">Nosotros</a>
+        <a href="#nosotros" class="item smooth-scrolling menu-item">¿Dónde comprar?</a>
+        <a href="#opinions" class="item smooth-scrolling menu-item">Más</a>
         <a  class="item smooth-scrolling contacto menu-item">Contacto</a>
         <div class="right item">
 
@@ -222,7 +225,7 @@
     </div>
   </div>
 
-  <div class="ui container testimonials">
+  <div id="opinions" class="ui container testimonials">
     <h3 class="ui header">Recomendaciones</h3>
     <div class="ui stackable four column grid ">
       <div class="column">
@@ -285,7 +288,7 @@
               </div>
               <div class="field form-style">
                 <label  style="padding-bottom: 10px;">Teléfono</label>
-                <input class="ui blue basic label" type="number" name="phone" placeholder="Tu teléfono (números únicamente)" required title="Por favor ingrese su telefono">
+                <input class="ui blue basic label" type="number" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
               </div>
             </div>
             <div class="column">
@@ -342,7 +345,7 @@
         </div>
         <div class="field">
           <label  style="padding-bottom: 10px;">Teléfono</label>
-          <input type="text" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
+          <input type="number" name="phone" placeholder="Tu teléfono" required title="Por favor ingrese su telefono">
         </div>
         <div class="field">
           <label  style="padding-bottom: 10px;">Comentario</label>
@@ -407,8 +410,8 @@
                 Email
               </div>
               <input type="text" name="compra-email" id="email-comprador">
-              <div id="error-compra"></div>              
             </div>
+            <div id="error-compra"></div>              
         </div>
         <div class="field">
           <div class="ui labeled input large"> 
@@ -416,10 +419,10 @@
               Cantidad
             </div>
             <input name="amount" data-price class="spinner" value="1" min="1" id="cantidad">
+          <div class="ui teal tagged label">
+            <span>$</span>&nbsp;<span class="" id="compra-precio"></span>
           </div>
-        </div>
-        <div class="ui green tag label">
-          <span>$</span>&nbsp;<span class="" id="compra-precio"></span>
+          </div>
         </div>
       </div>
       <div class="field modal-buttons">
@@ -574,7 +577,8 @@
         $('#contacto-modal').modal('show');
       });
 
-      $('input[name="amount"]').on('change',function(){
+      $('input[name="amount"]').on('keypress keyup change input',function(){
+        if(isNaN($(this).val())) $(this).val(0);
         var price = $(this).data('price') * $(this).val();
         $('#compra-precio').text(price);
         // console.log(price);
@@ -594,9 +598,9 @@
           return false;
         }else{
           $('#form-compra').submit();
-        }
-        
+        }        
       });
+
       $('#target').on('click', '.comprar', function(){
         var title = $(this).data('product-title');
         var price = $(this).data('product-price');
@@ -810,8 +814,79 @@
     });
 
     $(document).on('click','#target .image',function (){ $(this).parent().find('a.comprar').click() });
+  
+
+   new Waypoint({
+      element: document.getElementById('ofertas'),
+      handler: function(direction) {
+        $('.top.fixed.menu').find('.active').each(function(){
+          $(this).removeClass('active');
+        })
+        $('.top.fixed.menu').find('[href="#ofertas"]').addClass('active');
+      }
+    });
+   new Waypoint({
+      element: document.getElementById('nosotros'),
+      handler: function(direction) {
+        $('.top.fixed.menu').find('.active').each(function(){
+          $(this).removeClass('active');
+        })
+        $('.top.fixed.menu').find('[href="#nosotros"]').addClass('active');
+      }
+    });
+    new Waypoint({
+      element: document.getElementById('opinions'),
+      handler: function(direction) {
+        $('.top.fixed.menu').find('.active').each(function(){
+          $(this).removeClass('active');
+        })
+        $('.top.fixed.menu').find('[href="#opinions"]').addClass('active');
+      }
+    });
+    // $(document).ready(function () {
+    //     $(document).on("scroll", onScroll);
+        
+    //     //smoothscroll
+    //     $('a[href^="#"]').on('click', function (e) {
+    //         e.preventDefault();
+    //         $(document).off("scroll");
+            
+    //         $('a').each(function () {
+    //             $(this).removeClass('active');
+    //         })
+    //         $(this).addClass('active');
+          
+    //         var target = this.hash,
+    //             menu = target;
+    //         $target = $(target);
+    //         $('html, body').stop().animate({
+    //             'scrollTop': $target.offset().top+2
+    //         }, 500, 'swing', function () {
+    //             window.location.hash = target;
+    //             $(document).on("scroll", onScroll);
+    //         });
+    //     });
+    // });
+
+    // function onScroll(event){
+    //     var scrollPos = $(document).scrollTop();
+    //     $('#menu-center a').each(function () {
+    //         var currLink = $(this);
+    //         var refElement = $(currLink.attr("href"));
+    //         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+    //             $('#menu-center ul li a').removeClass("active");
+    //             currLink.addClass("active");
+    //         }
+    //         else{
+    //             currLink.removeClass("active");
+    //         }
+    //     });
+    // }
+
   </script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+
 </body>
 
 </html>
