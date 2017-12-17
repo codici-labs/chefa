@@ -13,8 +13,7 @@
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
- 
-  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuA4fr6b0amjoCHPnO8DkHPkwAqi_xUs&callback=initMap"></script>
+  
 </head>
 <body>
 
@@ -757,7 +756,7 @@
             }
             
         }
-        infowindow.setContent(map.markers[closest].title);
+        infowindow.setContent('<div class="maps-infowindow">'+map.markers[closest].title+'</div>');
         infowindow.open(map, map.markers[closest]);
         var center = new google.maps.LatLng(lat, lng);
         map.panTo(center);
@@ -767,7 +766,7 @@
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(locations[i].name);
+          infowindow.setContent('<div class="maps-infowindow">'+locations[i].name+'</div>');
           infowindow.open(map, marker);
         }
       })(marker, i));
@@ -885,7 +884,8 @@
 
   </script>
   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-
+  <script defer async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuA4fr6b0amjoCHPnO8DkHPkwAqi_xUs&callback=initMap"></script>
+    
 
 </body>
 

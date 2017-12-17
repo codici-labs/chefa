@@ -1,4 +1,5 @@
 AuthName "Restricted Area"
 AuthType Basic
+#AuthUserFile C:/xampp/htdocs/codicilabs/chefa/admin/.htpasswd
 AuthUserFile /var/www/codicilabs/trabajos/chefnity/admin/.htpasswd
 require valid-user

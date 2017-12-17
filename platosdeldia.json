@@ -1,181 +1,169 @@
 {
-	"platosdeldia": [
-		{
-			"id": 0, 
-			"plato": "Ravioles con salsa mixta", 
-			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Federico Pastori", 
-			"precio":"20",
-			"direccion": "juncal 1945 4a", 
-			"mail": "pastoricocina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.5844583,
-	        	"lng": -58.4230539
-	      	}
-		},
-		{
-			"id": 1, 
-			"plato": "Empanadas de carne", 
-			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Angel Di Maria", 
-			"precio":"280",
-			"direccion": "juncal 1945 4a", 
-			"mail": "fideitococina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.5844583,
-	        	"lng": -58.4230539
-	      	}
-		},
-		{
-			"id": 2, 
-			"plato": "Pizza de Mozzarella (porción)", 
-			"comentario": "Un clásico en su mejor versión: cocinado  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Enzo Perez", 
-			"precio":"30",
-			"direccion": "juncal 1945 4a", 
-			"mail": "enzococina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.5844583,
-	        	"lng": -58.4230539
-	      	}
-		},
-		{
-			"id": 3, 
-			"plato": "Sopa de vegetales", 
-			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Fernando Gago", 
-			"precio":"220",
-			"direccion": "juncal 1945 4a", 
-			"mail": "gagococina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.5978837,
-	        	"lng": -58.4422514
-	      	}
-		},
-		{
-			"id": 4, 
-			"plato": "Ensalada Caesar", 
-			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Rodrigo Palacio", 
-			"precio":"220",
-			"direccion": "juncal 1945 4a", 
-			"mail": "palaciodecocina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.620545,
-	        	"lng": -58.4504936
-	      	}
-		},
-		{
-			"id": 5, 
-			"plato": "Milanesa con papa fritas", 
-			"comentario": "Un clásico en su mejor versión: cocinado por tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Hector Bracamonte", 
-			"precio":"270",
-			"direccion": "juncal 1945 4a", 
-			"mail": "hectorcocina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.6340477,
-	        	"lng": -58.4716685
-	      	}
-		},
-		{
-			"id": 6, 
-			"plato": "Pollo con arroz", 
-			"comentario": "Un clásico en su mejor versión: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Jorge Da Silva", 
-			"precio":"250",
-			"direccion": "juncal 1945 4a", 
-			"mail": "jorgecocina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.6340477,
-	        	"lng": -58.4716685
-	      	}
-		},
-		{
-			"id": 7, 
-			"plato": "Polenta con salsa de tomate y queso (porción)", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Martin Lunati", 
-			"precio":"50",
-			"direccion": "juncal 1945 4a", 
-			"mail": "martincocina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.62525,
-	        	"lng": -58.4951703
-	      	}
-		},
-		{
-			"id": 8, 
-			"plato": "Pastel de carne (porción)", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Alberto Marcico", 
-			"precio":"950",
-			"direccion": "juncal 1945 4a", 
-			"mail": "albertococina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.5714374,
-	        	"lng": -58.4980609
-	      	}
-		},
-		{
-			"id": 9, 
-			"plato": "Sushi", 
-			"comentario": "Un clásico en su mejor versión: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.", 
-			"img": "./images/articulo.jpg", 
-			"cocinero":"Silvio Rodriguez", 
-			"precio":"123",
-			"direccion": "juncal 1945 4a", 
-			"mail": "silviococina@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.6195496,
-	        	"lng": -58.4018413
-	      	}
-		},
-		{
-			"id": 10, 
-			"plato": "Pollo al curry con leche de coco", 
-			"comentario": "Viene en dos versiones: clasica o picante", 
-			"img": "./images/pollo-al-curry.png", 
-			"cocinero":"Nicole Neumann", 
-			"precio":"125", 
-			"direccion": "juncal 1945 4a", 
-			"mail": "nicolecocinera@hotmail.com", 
-			"horario": "lunes martes y jueves. Hasta las 18 toma pedidos", 
-			"location":
-	      	{
-	        	"lat": -34.6215723,
-	        	"lng": -58.392859
-
-	      	}
-  		}
-	]
+    "platosdeldia": [
+        {
+            "id": 0,
+            "plato": "Ravioles con salsa mixta",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Federico Pastori",
+            "precio": "20",
+            "direccion": "juncal 1945 4a",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.5844583,
+                "lng": -58.4230539
+            }
+        },
+        {
+            "id": 1,
+            "plato": "Empanadas de carne",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Angel Di Maria",
+            "precio": "280",
+            "direccion": "juncal 1945 4a",
+            "mail": "fideitococina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.5844583,
+                "lng": -58.4230539
+            }
+        },
+        {
+            "id": 2,
+            "plato": "Pizza de Mozzarella (porci\u00f3n)",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado  tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Enzo Perez",
+            "precio": "30",
+            "direccion": "juncal 1945 4a",
+            "mail": "enzococina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.5844583,
+                "lng": -58.4230539
+            }
+        },
+        {
+            "id": 3,
+            "plato": "Sopa de vegetales",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Fernando Gago",
+            "precio": "220",
+            "direccion": "juncal 1945 4a",
+            "mail": "gagococina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.5978837,
+                "lng": -58.4422514
+            }
+        },
+        {
+            "id": 4,
+            "plato": "Ensalada Caesar",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Rodrigo Palacio",
+            "precio": "220",
+            "direccion": "juncal 1945 4a",
+            "mail": "palaciodecocina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.620545,
+                "lng": -58.4504936
+            }
+        },
+        {
+            "id": 5,
+            "plato": "Milanesa con papa fritas",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Hector Bracamonte",
+            "precio": "270",
+            "direccion": "juncal 1945 4a",
+            "mail": "hectorcocina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.6340477,
+                "lng": -58.4716685
+            }
+        },
+        {
+            "id": 6,
+            "plato": "Pollo con arroz",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Jorge Da Silva",
+            "precio": "250",
+            "direccion": "juncal 1945 4a",
+            "mail": "jorgecocina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.6340477,
+                "lng": -58.4716685
+            }
+        },
+        {
+            "id": 7,
+            "plato": "Polenta con salsa de tomate y queso (porci\u00f3n)",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Martin Lunati",
+            "precio": "50",
+            "direccion": "juncal 1945 4a",
+            "mail": "martincocina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.62525,
+                "lng": -58.4951703
+            }
+        },
+        {
+            "id": 8,
+            "plato": "Pastel de carne (porci\u00f3n)",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Alberto Marcico",
+            "precio": "950",
+            "direccion": "juncal 1945 4a",
+            "mail": "albertococina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.5714374,
+                "lng": -58.4980609
+            }
+        },
+        {
+            "id": 9,
+            "plato": "Sushi",
+            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.",
+            "img": ".\/images\/articulo.jpg",
+            "cocinero": "Silvio Rodriguez",
+            "precio": "123",
+            "direccion": "juncal 1945 4a",
+            "mail": "silviococina@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.6195496,
+                "lng": -58.4018413
+            }
+        },
+        {
+            "id": 10,
+            "plato": "Pollo al curry con leche de coco",
+            "comentario": "Viene en dos versiones: clasica o picante",
+            "img": ".\/images\/pollo-al-curry.png",
+            "cocinero": "Nicole Neumann",
+            "precio": "125",
+            "direccion": "juncal 1945 4a",
+            "mail": "nicolecocinera@hotmail.com",
+            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "location": {
+                "lat": -34.6215723,
+                "lng": -58.392859
+            }
+        }
+    ]
 }
