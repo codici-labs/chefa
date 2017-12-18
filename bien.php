@@ -2,6 +2,7 @@
 require("./lib/class.phpmailer.php");
 include("./sqlserver.php");
 
+$_GET['external_reference'] = 15135378961828;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,45 +14,57 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM sales WHERE orderId = " . $_GET['external_reference'];
 $result = $conn->query($sql);
 
+$file = 'platosdeldia.json';
+$data = json_decode(file_get_contents($file));
+
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        //echo "id: " . $row["id"]. " - Email: " . $row["email"]. " - Amount: " . $row["amount"]. " - idFood: " . $row["idFood"]. "<br>";
+        $dish_info = $data->platosdeldia[ $row["food_id"] ];
+    	
+    	$mail = new PHPMailer();
 
-
-		$mail = new PHPMailer();
-
-		//Luego tenemos que iniciar la validación por SMTP:
 		$mail->IsSMTP();
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = "ssl";
-		$mail->Host = "smtp.zoho.com"; // SMTP a utilizar. Por ej. smtp.elserver.com
-		$mail->Username = "test@codicilabs.com"; // Correo completo a utilizar
-		$mail->Password = "c0dicilabs2017"; // Contraseña
-		$mail->Port = 465; // Puerto a utilizar
+		$mail->Host = "smtp.zoho.com";
+		$mail->Username = "test@codicilabs.com";
+		$mail->Password = "c0dicilabs2017";
+		$mail->Port = 465;
+		$mail->IsHTML(true);
+		$mail->CharSet = 'UTF-8';
+		$mail->Encoding = "base64";
+		$mail->From = "test@codicilabs.com"; //info@chefnity.com
+		$mail->FromName = "Chefnity";
 
-		//Con estas pocas líneas iniciamos una conexión con el SMTP. Lo que ahora deberíamos hacer, es configurar el mensaje a enviar, el //From, etc.
-		$mail->From = "test@codicilabs.com"; // Desde donde enviamos (Para mostrar)
-		$mail->FromName = "Chefnity Test Codicilabs";
 
-		//Estas dos líneas, cumplirían la función de encabezado (En mail() usado de esta forma: “From: Nombre <correo@dominio.com>”) de //correo.
-		$mail->AddAddress($row["email"]); // Esta es la dirección a donde enviamos
-		$mail->IsHTML(true); // El correo se envía como HTML
-		$mail->Subject = "Tu compra en Chefnity"; // Este es el titulo del email.
-		/*$body = "Hola. Esto es un recibo de tu compra en chefnity.<br />";
-		$body .= "Tu nro de orden es: " . $row["id"] . "<br />";
-		$body .= "Compraste <strong>" . $row["amount"] . "</strong> del plato: <strong>" . $row["food"] . "</strong><br />";
-		$body .= "Pagaste <strong>$" . $row["price"] . "</strong> por cada plato. Un total de <strong>$" . ($row["price"]*$row["amount"]) . "</strong><br />";
-		$body .= "Tenes que ir a retirarlo a <strong>" . $row["address"] . "</strong>.";*/
-
-		$body = file_get_contents('./mailing/confirmacion/index.html');
-		$body = str_replace("!*NOMBRE*!", $row["email"], $body);
+		// Mail comprador
+		$mail->Subject = "Tu compra en Chefnity";
+		$mail->AddAddress($row["email"]);
+		$body = file_get_contents('./mailing/confirmacion/comprador.html');
 		$body = str_replace("!*CANTIDAD*!", $row["amount"], $body);
 		$body = str_replace("!*PRODUCTO*!", $row["food"], $body);
 		$body = str_replace("!*DIRECCION*!", $row["address"], $body);
-		$mail->Body = $body; // Mensaje a enviar
-		$exito = $mail->Send(); // Envía el correo.
+		$body = str_replace("!*CHEF*!", $dish_info->cocinero, $body);
+		$body = str_replace("!*EMAIL*!", $dish_info->mail, $body);
+		$body = str_replace("!*HORARIO*!", $dish_info->horario, $body);
+		$mail->Body = $body;
+		$exito = $mail->Send();
 
+		$mail->clearAddresses();
+
+		// Mail chef
+		$mail->Subject = "Tu venta en Chefnity";
+		$mail->AddAddress($dish_info->mail);
+		$body = file_get_contents('./mailing/confirmacion/chef.html');
+		$body = str_replace("!*CANTIDAD*!", $row["amount"], $body);
+		$body = str_replace("!*PRODUCTO*!", $row["food"], $body);
+		$body = str_replace("!*DIRECCION*!", $row["address"], $body);
+		$body = str_replace("!*EMAIL*!", $row["EMAIL"], $body);
+		$body = str_replace("!*HORARIO*!", $dish_info->horario, $body);
+		$exito = $mail->Send();
+
+		
 		//También podríamos agregar simples verificaciones para saber si se envió:
 		if($exito){
 			echo "El correo fue enviado correctamente.";

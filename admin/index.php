@@ -319,7 +319,6 @@ input[type="text"].focus {
 			}
 
 			function renderTable(data){
-				console.log(data)
 				template = document.getElementById('table-template').innerHTML;
 				container = document.getElementById('deletables');
 				_render(data, true);
@@ -343,7 +342,6 @@ input[type="text"].focus {
 					}
 				};
 				renderTable([data]);
-				console.log('asd')
 				var inputs = document.querySelectorAll(".row-adder input");
 				for(var i=0; i < inputs.length; i++) inputs[i].value = '';
 
@@ -356,7 +354,6 @@ input[type="text"].focus {
 			function _render(data, append){
 				Mustache.parse(template);
 				var rendered = '';
-				console.log(data);
 				data.forEach((v)=>rendered += Mustache.render(template, {
 					plato: v.plato,
 					comentario: v.comentario,

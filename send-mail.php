@@ -13,6 +13,7 @@ $mail->IsHTML(true);
 $mail->CharSet = 'UTF-8';
 $mail->Encoding = "base64";
 $mail->FromName = "Chefnity";
+$mail->From = "test@codicilabs.com"; //info@chefnity.com
 
 
 // //replace with your email-sotomayorsebastian4@gmail.com
@@ -22,7 +23,6 @@ switch ($_POST['form']) {
 		try {
 		// Nuevo usuario registrado
 		$mail->Body = build_mail(file_get_contents('./mailing/registro/chefnity.html'));
-		$mail->From = "test@codicilabs.com"; //info@chefnity.com
 		$mail->addAddress("test@codicilabs.com"); //info@chefnity.com 
 		$mail->Subject = "Nuevo usuario registrado";
 		$mail->send();
@@ -31,7 +31,6 @@ switch ($_POST['form']) {
 
 		// Mail de registro al usuario
 		$mail->Body = build_mail(file_get_contents('./mailing/registro/user.html'));
-		$mail->From = "test@codicilabs.com"; //info@chefnity.com
 		$mail->addAddress($_POST['email']); 
 		$mail->Subject = "¡Bienvenido a Chefnity!";
 		$mail->send();
@@ -48,7 +47,6 @@ switch ($_POST['form']) {
 		try {
 		// Mail de contacto
 		$mail->Body = build_mail(file_get_contents('./mailing/contacto/chefnity.html'));
-		$mail->From = "test@codicilabs.com"; //info@chefnity.com
 		$mail->addAddress("test@codicilabs.com"); //info@chefnity.com 
 		$mail->Subject = "Mail de contacto";
 		$mail->send();
@@ -57,7 +55,6 @@ switch ($_POST['form']) {
 
 		// Copia al usuario
 		$mail->Body = build_mail(file_get_contents('./mailing/contacto/user.html'));
-		$mail->From = "test@codicilabs.com"; //info@chefnity.com
 		$mail->addAddress($_POST['email']); 
 		$mail->Subject = "Copia de tu email enviado a Chefnity";
 		$mail->send();

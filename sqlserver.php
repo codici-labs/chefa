@@ -1,6 +1,6 @@
 <?php
 	$servername = "localhost";
-	$username = "usuario";
-	$password = "clave";
-	$dbname = "nombreBase";
+	$username = "root";
+	$password = "";
+	$dbname = "chefnity";
 ?>

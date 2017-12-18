@@ -16,7 +16,7 @@ if($_POST){
 	    die("Connection failed: " . mysqli_connect_error());
 	}
 	$orderId = strval(time()) . strval(rand(0,9999));
-	$sql = "INSERT INTO sales (email, amount, price, food, address, orderID) VALUES ('" . $_POST['compra-email'] . "', '" . $_POST['amount'] . "', '" . $_POST['price'] . "', '" . $_POST['title'] . "', '" . $_POST['direccion'] . "', '" . $orderId . "')";
+	$sql = "INSERT INTO sales (email, amount, price, food_id, food, address, orderID) VALUES ('" . $_POST['compra-email'] . "', '" . $_POST['amount'] . "', '" . $_POST['price'] . "', " . $_POST['id'] . ", '" . $_POST['title'] . "', '" . $_POST['direccion'] . "', '" . $orderId . "')";
 
 	if (mysqli_query($conn, $sql)) {
 	    echo "New record created successfully";
