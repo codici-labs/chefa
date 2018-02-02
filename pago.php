@@ -19,7 +19,7 @@ if($_POST){
 	$sql = "INSERT INTO sales (email, amount, price, food_id, food, address, orderID) VALUES ('" . $_POST['compra-email'] . "', '" . $_POST['amount'] . "', '" . $_POST['price'] . "', " . $_POST['id'] . ", '" . $_POST['title'] . "', '" . $_POST['direccion'] . "', '" . $orderId . "')";
 
 	if (mysqli_query($conn, $sql)) {
-	    echo "New record created successfully";
+	    //echo "New record created successfully";
 	    //$externalReference = mysqli_insert_id($conn);
 	} else {
 	    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -32,7 +32,7 @@ if($_POST){
 
 	////////////// seguimos con ML /////////////
 
-	$url = 'http://codicilabs.com/trabajos/chefnity/';
+	$url = 'https://www.chefnity.com/';
 	$mp = new MP ("5292114926274207", "sYjBqCaHveEzBSyqbJn0C7Jupo9CqxfC");
 
 	$access_token = $mp->get_access_token();
@@ -52,9 +52,9 @@ if($_POST){
 				"email" => $_POST['compra-email'], //mail que viene por post??
 		),
 	    "back_urls" => array(
-			"success" => "http://www.codicilabs.com/trabajos/chefnity/bien.php",
-			"failure" => "http://www.codicilabs.com/trabajos/chefnity/mal.php",
-			"pending" => "http://www.codicilabs.com/trabajos/chefnity/pendiente.php"
+			"success" => "https://www.chefnity.com/bien.php",
+			"failure" => "https://www.chefnity.com/mal.php",
+			"pending" => "https://www.chefnity.com/pendiente.php"
 		),
 		"auto_return" => "approved",
 		"payment_methods" => array(
@@ -80,6 +80,7 @@ if($_POST){
 	if($preference){
 		$redirect = $preference['response']['sandbox_init_point'];
 		header('Location:'.$redirect);
+		echo $redirect;
 		exit;
 	}else{
 		die('Error');

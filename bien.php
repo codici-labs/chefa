@@ -2,7 +2,9 @@
 require("./lib/class.phpmailer.php");
 include("./sqlserver.php");
 
-$_GET['external_reference'] = 15135378961828;
+//COMPLETAR CON EL MAIL DE CHEQUEO DE VENTAS:
+$check = true;
+$checkMail = "oscar@codicilabs.com";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,17 +26,19 @@ if ($result->num_rows > 0) {
     	
     	$mail = new PHPMailer();
 
-		$mail->IsSMTP();
+    	
+		$mail->SMTPDebug = 4; //Alternative to above constant
+		//$mail->IsSMTP();
 		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "ssl";
-		$mail->Host = "smtp.zoho.com";
-		$mail->Username = "test@codicilabs.com";
-		$mail->Password = "c0dicilabs2017";
-		$mail->Port = 465;
+		$mail->SMTPSecure = "tls";
+		$mail->Host = "HOST MAIL SERVER";
+		$mail->Username = "MAIL QUE ENVIA";
+		$mail->Password = "CLAVE";
+		$mail->Port = 587;
 		$mail->IsHTML(true);
 		$mail->CharSet = 'UTF-8';
 		$mail->Encoding = "base64";
-		$mail->From = "test@codicilabs.com"; //info@chefnity.com
+		$mail->From = "MAIL QUE ENVIA"; //info@chefnity.com
 		$mail->FromName = "Chefnity";
 
 
@@ -55,19 +59,37 @@ if ($result->num_rows > 0) {
 
 		// Mail chef
 		$mail->Subject = "Tu venta en Chefnity";
-		$mail->AddAddress($dish_info->mail);
+		$mail->AddAddress($dish_info->mail);  //email de vendedor
 		$body = file_get_contents('./mailing/confirmacion/chef.html');
 		$body = str_replace("!*CANTIDAD*!", $row["amount"], $body);
 		$body = str_replace("!*PRODUCTO*!", $row["food"], $body);
 		$body = str_replace("!*DIRECCION*!", $row["address"], $body);
-		$body = str_replace("!*EMAIL*!", $row["EMAIL"], $body);
+		$body = str_replace("!*EMAIL*!", $row["email"], $body);
 		$body = str_replace("!*HORARIO*!", $dish_info->horario, $body);
-		$exito = $mail->Send();
+		$mail->Body = $body;
+		$exitoo = $mail->Send();
 
+		// Mail check
+		if ($check) {
+			$mail->clearAddresses();
+			$mail->Subject = "Venta en Chefnity";
+			$mail->AddAddress($checkMail);  //email de checks
+			$body = file_get_contents('./mailing/confirmacion/check.html');
+			$body = str_replace("!*CANTIDAD*!", $row["amount"], $body);
+			$body = str_replace("!*PRODUCTO*!", $row["food"], $body);
+			$body = str_replace("!*DIRECCION*!", $row["address"], $body);
+			$body = str_replace("!*EMAILCLI*!", $row["email"], $body);
+			$body = str_replace("!*EMAILCHEF*!", $dish_info->mail, $body);
+			$body = str_replace("!*HORARIO*!", $dish_info->horario, $body);
+			$body = str_replace("!*CHEF*!", $dish_info->cocinero, $body);
+			$body = str_replace("!*IDVENTA*!", $row["orderId"], $body);
+			$mail->Body = $body;
+			$mail->Send();
+		}
 		
 		//También podríamos agregar simples verificaciones para saber si se envió:
-		if($exito){
-			echo "El correo fue enviado correctamente.";
+		if($exito && $exitoo){
+			//echo "El correo fue enviado correctamente.";
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			// Check connection
@@ -80,7 +102,7 @@ if ($result->num_rows > 0) {
 
 
 
-			header("Location: http://www.codicilabs.com/trabajos/chefnity/#success", true, 301);
+			header("Location: https://www.chefnity.com/#success", true, 301);
 			exit();
 		}else{
 			echo "Hubo un inconveniente con el envío de mail. Contacta a un administrador.";
