@@ -1,0 +1,4 @@
+<?
+echo realpath();
+echo getcwd();
+?>

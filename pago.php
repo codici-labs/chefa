@@ -33,7 +33,7 @@ if($_POST){
 	////////////// seguimos con ML /////////////
 
 	$url = 'https://www.chefnity.com/';
-	$mp = new MP ("5292114926274207", "sYjBqCaHveEzBSyqbJn0C7Jupo9CqxfC");
+	$mp = new MP ("xxxx", "xxxx");  //chefnity
 
 	$access_token = $mp->get_access_token();
 
@@ -56,6 +56,7 @@ if($_POST){
 			"failure" => "https://www.chefnity.com/mal.php",
 			"pending" => "https://www.chefnity.com/pendiente.php"
 		),
+		"notification_url" => "http://www.codicilabs.com/mercadopago-sdk-php/mepagaron.php",
 		"auto_return" => "approved",
 		"payment_methods" => array(
 			"excluded_payment_types" => array(
@@ -78,7 +79,7 @@ if($_POST){
 
 	$preference = $mp->create_preference($preference_data);
 	if($preference){
-		$redirect = $preference['response']['sandbox_init_point'];
+		$redirect = $preference['response']['init_point'];
 		header('Location:'.$redirect);
 		echo $redirect;
 		exit;

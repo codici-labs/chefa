@@ -31,14 +31,14 @@ if ($result->num_rows > 0) {
 		//$mail->IsSMTP();
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = "tls";
-		$mail->Host = "HOST MAIL SERVER";
-		$mail->Username = "MAIL QUE ENVIA";
-		$mail->Password = "CLAVE";
+		$mail->Host = "smtp.1and1.com";
+		$mail->Username = "martin.pandolfelli@chefnity.com";
+		$mail->Password = "clave";
 		$mail->Port = 587;
 		$mail->IsHTML(true);
 		$mail->CharSet = 'UTF-8';
 		$mail->Encoding = "base64";
-		$mail->From = "MAIL QUE ENVIA"; //info@chefnity.com
+		$mail->From = "martin.pandolfelli@chefnity.com"; //info@chefnity.com
 		$mail->FromName = "Chefnity";
 
 

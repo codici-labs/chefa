@@ -2,167 +2,152 @@
     "platosdeldia": [
         {
             "id": 0,
-            "plato": "Ravioles con salsa mixta",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Federico Pastori",
-            "precio": "20",
+            "plato": "Pollo al curry con leche de coco",
+            "comentario": "Viene en dos versiones: cl\u00e1sica o picante. ",
+            "img": ".\/images\/pollo-al-curry.png",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "125",
             "direccion": "juncal 1945 4a",
             "mail": "pastoricocina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido.",
             "location": {
-                "lat": -34.5844583,
-                "lng": -58.4230539
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 1,
-            "plato": "Empanadas de carne",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Angel Di Maria",
-            "precio": "280",
+            "plato": "Fusilli al tuco",
+            "comentario": "Un favorito en versi\u00f3n roja",
+            "img": ".\/images\/fusilli_al_tuco",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "99",
             "direccion": "juncal 1945 4a",
-            "mail": "fideitococina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido. ",
             "location": {
-                "lat": -34.5844583,
-                "lng": -58.4230539
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 2,
-            "plato": "Pizza de Mozzarella (porci\u00f3n)",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado  tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Enzo Perez",
-            "precio": "30",
+            "plato": "Fusilli al pesto",
+            "comentario": "Un favorito en versi\u00f3n verde",
+            "img": ".\/images\/fusilli_al_pesto",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "110",
             "direccion": "juncal 1945 4a",
-            "mail": "enzococina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido.",
             "location": {
-                "lat": -34.5844583,
-                "lng": -58.4230539
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 3,
-            "plato": "Sopa de vegetales",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Fernando Gago",
-            "precio": "220",
+            "plato": "Pollo a la Mostaza",
+            "comentario": "Demasiado rico",
+            "img": ".\/images\/pollo_mostaza",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "139",
             "direccion": "juncal 1945 4a",
-            "mail": "gagococina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido.",
             "location": {
-                "lat": -34.5978837,
-                "lng": -58.4422514
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 4,
-            "plato": "Ensalada Caesar",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Rodrigo Palacio",
-            "precio": "220",
+            "plato": "Ojo de Bife con Papas",
+            "comentario": "Para paladares exigentes",
+            "img": ".\/images\/ojo_de_bife",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "169",
             "direccion": "juncal 1945 4a",
-            "mail": "palaciodecocina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido.",
             "location": {
-                "lat": -34.620545,
-                "lng": -58.4504936
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 5,
-            "plato": "Milanesa con papa fritas",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Hector Bracamonte",
-            "precio": "270",
+            "plato": "Filet de merluza con ensalada de hojas verdes, palta, almendras tostadas",
+            "comentario": "Si te gusta la merluza, no te pierdas este plato",
+            "img": ".\/images\/filet_merluza.jpg",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "149",
             "direccion": "juncal 1945 4a",
-            "mail": "hectorcocina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido.",
             "location": {
-                "lat": -34.6340477,
-                "lng": -58.4716685
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 6,
-            "plato": "Pollo con arroz",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por  tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Jorge Da Silva",
-            "precio": "250",
+            "plato": "Pollo con Pur\u00e9",
+            "comentario": "O pur\u00e9 con pollo. Igual de rico",
+            "img": ".\/images\/pollo_pure.jpg",
+            "cocinero": "Federico Pastori - Abierto Lunes, Martes y Jueves a partir de las 19 hs. Confirmar pedido antes de ese horario.",
+            "precio": "99",
             "direccion": "juncal 1945 4a",
-            "mail": "jorgecocina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "mail": "pastoricocina@hotmail.com",
+            "horario": "Lunes, Martes y Jueves. Hasta las 18 hs. toma pedido.",
             "location": {
-                "lat": -34.6340477,
-                "lng": -58.4716685
+                "lat": -34.589771,
+                "lng": -58.4156183
             }
         },
         {
             "id": 7,
-            "plato": "Polenta con salsa de tomate y queso (porci\u00f3n)",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Martin Lunati",
-            "precio": "50",
-            "direccion": "juncal 1945 4a",
-            "mail": "martincocina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "plato": "Cheesecake de frutillas y ar\u00e1ndanos",
+            "comentario": "Riqu\u00edsimo. No puede faltar en tu mesa de postres.",
+            "img": ".\/images\/cheesecake",
+            "cocinero": "Milagros Cord\u00f3n - Merengue Pasteler\u00eda. Confirmar 72 hs antes del d\u00eda de entrega",
+            "precio": "550",
+            "direccion": "Jer\u00f3nimo Salguero 2244 7A",
+            "mail": "milicordon@gmail.com",
+            "horario": "Lunes a Domingo 24 hs. Confirmar pedido con anticipaci\u00f3n de 72 hs.",
             "location": {
-                "lat": -34.62525,
-                "lng": -58.4951703
+                "lat": -34.58551,
+                "lng": -58.411409
             }
         },
         {
             "id": 8,
-            "plato": "Pastel de carne (porci\u00f3n)",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Alberto Marcico",
-            "precio": "950",
-            "direccion": "juncal 1945 4a",
-            "mail": "albertococina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "plato": "Carrot Cake",
+            "comentario": "Torta dulce de zanahoria. #CarrotCake ",
+            "img": ".\/images\/carrotcake",
+            "cocinero": "Milagros Cord\u00f3n - Merengue Pasteler\u00eda. Confirmar 72 hs antes del d\u00eda de entrega",
+            "precio": "500",
+            "direccion": "Jer\u00f3nimo Salguero 2244 7A",
+            "mail": "milicordon@gmail.com",
+            "horario": "Lunes a Domingo 24 hs. Confirmar pedido con anticipaci\u00f3n de 72 hs.",
             "location": {
-                "lat": -34.5714374,
-                "lng": -58.4980609
+                "lat": -34.58551,
+                "lng": -58.411409
             }
         },
         {
             "id": 9,
-            "plato": "Sushi",
-            "comentario": "Un cl\u00e1sico en su mejor versi\u00f3n: cocinado por Guillermo, tu vecino de Palermo. 1,2,3 te llama el sabor.",
-            "img": ".\/images\/articulo.jpg",
-            "cocinero": "Silvio Rodriguez",
-            "precio": "123",
-            "direccion": "juncal 1945 4a",
-            "mail": "silviococina@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
+            "plato": "Torta Brownie y Dulce de Leche",
+            "comentario": "La m\u00e1s rica: Torta Brownie!!!",
+            "img": ".\/images\/tortabrownie",
+            "cocinero": "Milagros Cord\u00f3n - Merengue Pasteler\u00eda. Confirmar 72 hs antes del d\u00eda de entrega",
+            "precio": "470",
+            "direccion": "Jer\u00f3nimo Salguero 2244 7A",
+            "mail": "milicordon@gmail.com",
+            "horario": "Lunes a Domingo 24 hs. Confirmar pedido con anticipaci\u00f3n de 72 hs.",
             "location": {
-                "lat": -34.6195496,
-                "lng": -58.4018413
-            }
-        },
-        {
-            "id": 10,
-            "plato": "Pollo al curry con leche de coco",
-            "comentario": "Viene en dos versiones: clasica o picante",
-            "img": ".\/images\/pollo-al-curry.png",
-            "cocinero": "Nicole Neumann",
-            "precio": "125",
-            "direccion": "juncal 1945 4a",
-            "mail": "nicolecocinera@hotmail.com",
-            "horario": "lunes martes y jueves. Hasta las 18 toma pedidos",
-            "location": {
-                "lat": -34.6215723,
-                "lng": -58.392859
+                "lat": -34.58551,
+                "lng": -58.411409
             }
         }
     ]

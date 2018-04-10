@@ -7,7 +7,7 @@ $mail->SMTPAuth = true;
 $mail->SMTPSecure = "ssl";
 $mail->Host = "smtp.zoho.com"; //"smtp.zoho.com"; 
 $mail->Username = "test@codicilabs.com"; 
-$mail->Password = "c0dicilabs2017"; 
+$mail->Password = "password"; 
 $mail->Port = 465; //465; 
 $mail->IsHTML(true); 
 $mail->CharSet = 'UTF-8';
